@@ -11,30 +11,45 @@ import UIKit
 var list = [DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote()]
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (list.count)
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = list[indexPath.row].simpleDescription()
-        return (cell)
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        MyTableView.reloadData()
-    }
-
-    @IBOutlet weak var MyTableView: UITableView!
+    var tableView = UITableView()
+    var tableData = list
     
-    @IBAction func editButton(_ sender: Any) {
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //styles
+        tableView = UITableView(frame: self.view.bounds, style: UITableView.Style.plain)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = UIColor.white
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "my")
+        
+        tableView.contentInset.top = 20
+        let contentSize = self.tableView.contentSize
+        let footer = UIView(frame: CGRect(x: self.tableView.frame.origin.x,
+                                          y: self.tableView.frame.origin.y + contentSize.height,
+                                          width: self.tableView.frame.size.width,
+                                          height: self.tableView.frame.height - self.tableView.contentSize.height))
+        
+        self.tableView.tableFooterView = footer
+        
+        
+        view.addSubview(tableView)
+        
     }
-
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "my", for: indexPath)
+        cell.textLabel?.text = tableData[indexPath.row].simpleDescription()
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableData.count
+    }
 }
-
