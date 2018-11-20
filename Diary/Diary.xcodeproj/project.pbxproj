@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7601A0AC21A4B60000DBF9F0 /* EditingNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */; };
 		76CB699421A33D8A00D5208E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699321A33D8A00D5208E /* AppDelegate.swift */; };
 		76CB699621A33D8A00D5208E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699521A33D8A00D5208E /* ViewController.swift */; };
 		76CB699921A33D8A00D5208E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CB699721A33D8A00D5208E /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingNoteViewController.swift; sourceTree = "<group>"; };
 		76CB699021A33D8A00D5208E /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76CB699321A33D8A00D5208E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76CB699521A33D8A00D5208E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,10 +62,11 @@
 		76CB699221A33D8A00D5208E /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				76CB69A821A3445D00D5208E /* DiaryNote.swift */,
 				76CB699321A33D8A00D5208E /* AppDelegate.swift */,
 				76CB699521A33D8A00D5208E /* ViewController.swift */,
-				76CB69A821A3445D00D5208E /* DiaryNote.swift */,
 				76CB699721A33D8A00D5208E /* Main.storyboard */,
+				7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */,
 				76CB69AC21A35C2E00D5208E /* CreationViewController.swift */,
 				76CB699D21A33D8A00D5208E /* Assets.xcassets */,
 				76CB699F21A33D8A00D5208E /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 				76CB699C21A33D8A00D5208E /* Diary.xcdatamodeld in Sources */,
 				76CB69A921A3445D00D5208E /* DiaryNote.swift in Sources */,
 				76CB699621A33D8A00D5208E /* ViewController.swift in Sources */,
+				7601A0AC21A4B60000DBF9F0 /* EditingNoteViewController.swift in Sources */,
 				76CB699421A33D8A00D5208E /* AppDelegate.swift in Sources */,
 				76CB69AD21A35C2E00D5208E /* CreationViewController.swift in Sources */,
 			);
