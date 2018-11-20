@@ -8,7 +8,7 @@
 
 import UIKit
 
-var list = [DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote()]
+var list = [DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote(name: "Завтра в школу", text: "Ужас"),DiaryNote(name: "Завтра в школу", text: "Ужас")]
 
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -51,9 +51,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return list.count
     }
     
+    //doesn't work
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueForPassingData" {
+            if let indexPath = tableView.indexPathForSelectedRow { // [cant get index of tableview]
+                let selectedRow = indexPath.row
+                let detailVC = segue.destination as! EditingNoteViewController
+                detailVC.recivedName = list[selectedRow].name!
+            }
+            else {
+                print("something went wrong")
+            }
+        }
+    }
+
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
     {
         print("cell tapped")
+        self.performSegue(withIdentifier: "segueForPassingData", sender: nil)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

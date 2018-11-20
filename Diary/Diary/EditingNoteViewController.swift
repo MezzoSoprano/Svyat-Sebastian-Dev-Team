@@ -10,14 +10,19 @@ import UIKit
 
 class EditingNoteViewController: UIViewController {
 
+    var recivedName: String = ""
     
     @IBAction func deleteAction(_ sender: Any) {
         
     }
+    @IBOutlet weak var editingName: UITextField!
+    
+    @IBOutlet weak var editingText: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        editingName.text = recivedName
     }
     
 
