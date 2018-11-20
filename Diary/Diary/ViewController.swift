@@ -34,7 +34,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                           height: self.tableView.frame.height - self.tableView.contentSize.height))
         
         self.tableView.tableFooterView = footer
-        
         view.addSubview(tableView)
         
     }
