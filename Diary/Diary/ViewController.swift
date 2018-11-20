@@ -10,6 +10,7 @@ import UIKit
 
 var list = [DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote()]
 
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView = UITableView()
@@ -25,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "my")
         
-        tableView.contentInset.top = 20
+        tableView.contentInset.top = 10
         let contentSize = self.tableView.contentSize
         let footer = UIView(frame: CGRect(x: self.tableView.frame.origin.x,
                                           y: self.tableView.frame.origin.y + contentSize.height,
@@ -33,7 +34,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                           height: self.tableView.frame.height - self.tableView.contentSize.height))
         
         self.tableView.tableFooterView = footer
-        
         
         view.addSubview(tableView)
         
@@ -51,5 +51,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableData.count
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
+    {
+        print("cell tapped")
     }
 }

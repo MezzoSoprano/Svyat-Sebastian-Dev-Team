@@ -57,7 +57,6 @@ class DiaryNote {
     
     init (name: String? = nil, text: String? = nil, tags: [String]? = nil)
     {
-        
         self.name = name
         self.text = text
         self.tags = tags
