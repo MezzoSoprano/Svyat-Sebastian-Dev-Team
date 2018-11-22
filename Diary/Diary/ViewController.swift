@@ -8,12 +8,13 @@
 
 import UIKit
 
-var list = [DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote(name: "Завтра в школу", text: "Ужас"),DiaryNote(name: "Завтра в школу", text: "Ужас")]
-
+var list = [DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote(name: "Ujac", text: "Ужас"),DiaryNote(name: "Hi man", text: "Ужас")]
+var selectedItemIndex: Int?
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView = UITableView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,23 +52,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return list.count
     }
     
-    //doesn't work
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueForPassingData" {
-            if let indexPath = tableView.indexPathForSelectedRow { // [cant get index of tableview]
-                let selectedRow = indexPath.row
                 let detailVC = segue.destination as! EditingNoteViewController
-                detailVC.recivedName = list[selectedRow].name!
-            }
-            else {
-                print("something went wrong")
-            }
+            guard let itemTemp = selectedItemIndex else {
+                print("Couldn't get selected index")
+                return
         }
+            detailVC.recivedItemIndex = itemTemp
     }
-
+    }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
     {
-        print("cell tapped")
+        selectedItemIndex = indexPath.row
         self.performSegue(withIdentifier: "segueForPassingData", sender: nil)
         
     }
@@ -79,7 +76,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("Deleted")
-            
             list.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }

@@ -10,10 +10,14 @@ import UIKit
 
 class EditingNoteViewController: UIViewController {
 
-    var recivedName: String = ""
+    var recivedItemIndex: Int?
     
     @IBAction func deleteAction(_ sender: Any) {
-        
+        guard let recivedIndex = recivedItemIndex else {
+            print("Couldnt get index")
+            return
+        }
+        list.remove(at: recivedIndex)
     }
     @IBOutlet weak var editingName: UITextField!
     
@@ -21,9 +25,23 @@ class EditingNoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        editingName.text = recivedName
+        guard let recivedIndex = recivedItemIndex else {
+            print("Couldnt get index")
+            return
+        }
+        
+        editingName.text = list[recivedIndex].name
+        editingText.text = list[recivedIndex].text
     }
     
-
+    @IBAction func saveEditingNote(_ sender: Any) {
+        guard let recivedIndex = recivedItemIndex else {
+            print("Couldnt get index")
+            return
+        }
+        
+        list[recivedIndex].name = editingName.text
+        list[recivedIndex].text = editingText.text
+    }
+    
 }
