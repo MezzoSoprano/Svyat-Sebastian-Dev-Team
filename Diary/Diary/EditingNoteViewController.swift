@@ -18,7 +18,10 @@ class EditingNoteViewController: UIViewController {
             return
         }
         list.remove(at: recivedIndex)
+        _ = navigationController?.popViewController(animated: true)
+
     }
+    
     @IBOutlet weak var editingName: UITextField!
     
     @IBOutlet weak var editingText: UITextView!
