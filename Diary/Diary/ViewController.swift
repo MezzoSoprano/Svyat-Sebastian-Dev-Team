@@ -11,6 +11,8 @@ import UIKit
 var list = [DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote(name: "Ujac", text: "Ужас"),DiaryNote(name: "Hi man", text: "Ужас"), DiaryNote(name: "Make HW", text: "Immediately") ]
 var selectedItemIndex: Int?
 
+var backGroundColor: UIColor = UIColor(r: 128, g: 126, b: 124)
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView = UITableView()
@@ -18,11 +20,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let tableCellID = "CellID"
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        setupTableView() //creating tableView with constraints
         
-        //tableview
-        setupTableView()
     }
     
     private func setupTableView() {
@@ -31,13 +31,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
-        tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        tableView.backgroundColor = UIColor(r: 128, g: 126, b: 124)
+        tableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
+        tableView.backgroundColor = backGroundColor
+        
         //constarints adding
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
@@ -85,7 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: tableCellID, for: indexPath) as! tableCell
-        cell.textLabel?.text = list[indexPath.row].simpleDescription()
+        cell.nameLabel.text = list[indexPath.row].name
         return cell
     }
     
@@ -98,22 +99,70 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 class tableCell: UITableViewCell {
     let cellView: UIView = {
         let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(r: 184, g: 176, b: 170)
         view.setCellShadow()
         return view
     }()
-
+    
+    var pictureImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.contentMode = .scaleAspectFit
+        iv.backgroundColor = .gray
+        iv.layer.cornerRadius = 35
+        return iv
+    }()
+    
+    var textView: UITextView = {
+        let tvi = UITextView()
+        tvi.translatesAutoresizingMaskIntoConstraints = false
+        tvi.textColor = UIColor.darkGray
+        return tvi
+    }()
+    
+    var nameLabel: UILabel = {
+        let la = UILabel()
+        la.translatesAutoresizingMaskIntoConstraints = false
+        la.textColor = UIColor.darkGray
+        return la
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
+        self.backgroundColor = backGroundColor
         setup()
     }
 
     func setup() {
         addSubview(cellView)
-        self.selectionStyle = UITableViewCell.SelectionStyle.none
-//        self.setHighlighted(true, animated: true)
-        self.backgroundColor = UIColor(r: 128, g: 126, b: 124)
-        cellView.setAnchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 4, paddingLeft: 8, paddingBottom: 4, paddingRight: 8)
+        cellView.addSubview(self.pictureImageView)
+        cellView.addSubview(self.nameLabel)
+        cellView.addSubview(self.textView)
+        
+        //cellview constraits
+        cellView.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
+        cellView.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
+        cellView.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
+        cellView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
+        
+        //image constraits
+        pictureImageView.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 8).isActive = true
+        pictureImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        pictureImageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
+        pictureImageView.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
+        
+        //name label constraits
+        nameLabel.centerXAnchor.constraint(equalTo: cellView.centerXAnchor).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        nameLabel.centerYAnchor.constraint(equalToSystemSpacingBelow: cellView.centerYAnchor, multiplier: 1/2)
+        
+        //text vew constraits
+//        textView.centerXAnchor.constraint(equalTo: cellView.centerXAnchor).isActive = true
+//        textView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        textView.widthAnchor.constraint(equalToConstant: 400).isActive = true
+
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -21,6 +21,8 @@ class DiaryNote {
         }
     }
     
+    var image: UIImage?
+    
     var name: String? {
         didSet {
             if name != oldValue && oldValue != nil && name != nil {
@@ -55,12 +57,12 @@ class DiaryNote {
         tags = [""]
     }
     
-    init (name: String? = nil, text: String? = nil, tags: [String]? = nil)
+    init (name: String? = nil, text: String? = nil, tags: [String]? = nil, image: UIImage? = nil)
     {
         self.name = name
         self.text = text
         self.tags = tags
-        
+        self.image = image
     }
     
     func simpleDescription() -> String {
