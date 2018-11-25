@@ -19,8 +19,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="NOTES" id="gjz-RR-TqI">
+                    <navigationItem key="navigationItem" title="NOTES" id="gjz-RR-TqI" colorLabel="IBBuiltInLabel-Red">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wGN-1I-x0f">
+                            <color key="tintColor" red="0.96862745100000003" green="0.78039215689999997" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="46o-vy-cWA" kind="show" id="0EZ-cy-F2T"/>
                             </connections>
@@ -112,6 +113,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="CREATING NOTE" id="VFg-jt-E0z">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="jpx-BD-OqQ">
+                            <color key="tintColor" red="0.96862745100000003" green="0.78039215689999997" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addButton:" destination="46o-vy-cWA" id="qIq-IZ-Hdr"/>
                             </connections>
@@ -246,4 +248,5 @@
             <point key="canvasLocation" x="357.60000000000002" y="-564.46776611694156"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.96862745098039216" green="0.7803921568627451" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
 </document>

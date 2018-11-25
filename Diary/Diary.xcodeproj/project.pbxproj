@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7601A0AC21A4B60000DBF9F0 /* EditingNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */; };
+		7612FD1A21AA1B0A000D8097 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7612FD1921AA1B0A000D8097 /* Extensions.swift */; };
 		76CB699421A33D8A00D5208E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699321A33D8A00D5208E /* AppDelegate.swift */; };
 		76CB699621A33D8A00D5208E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699521A33D8A00D5208E /* ViewController.swift */; };
 		76CB699921A33D8A00D5208E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CB699721A33D8A00D5208E /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingNoteViewController.swift; sourceTree = "<group>"; };
+		7612FD1921AA1B0A000D8097 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		76CB699021A33D8A00D5208E /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76CB699321A33D8A00D5208E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76CB699521A33D8A00D5208E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				76CB69A821A3445D00D5208E /* DiaryNote.swift */,
 				76CB699321A33D8A00D5208E /* AppDelegate.swift */,
 				76CB699521A33D8A00D5208E /* ViewController.swift */,
+				7612FD1921AA1B0A000D8097 /* Extensions.swift */,
 				76CB699721A33D8A00D5208E /* Main.storyboard */,
 				7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */,
 				76CB69AC21A35C2E00D5208E /* CreationViewController.swift */,
@@ -153,6 +156,7 @@
 				7601A0AC21A4B60000DBF9F0 /* EditingNoteViewController.swift in Sources */,
 				76CB699421A33D8A00D5208E /* AppDelegate.swift in Sources */,
 				76CB69AD21A35C2E00D5208E /* CreationViewController.swift in Sources */,
+				7612FD1A21AA1B0A000D8097 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
