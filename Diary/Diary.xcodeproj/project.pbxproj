@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7601A0AC21A4B60000DBF9F0 /* EditingNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */; };
+		760EBE0221AB3AFE0095EF42 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */; };
 		7612FD1A21AA1B0A000D8097 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7612FD1921AA1B0A000D8097 /* Extensions.swift */; };
 		76CB699421A33D8A00D5208E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699321A33D8A00D5208E /* AppDelegate.swift */; };
 		76CB699621A33D8A00D5208E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699521A33D8A00D5208E /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingNoteViewController.swift; sourceTree = "<group>"; };
+		760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7612FD1921AA1B0A000D8097 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		76CB699021A33D8A00D5208E /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76CB699321A33D8A00D5208E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,13 +66,14 @@
 		76CB699221A33D8A00D5208E /* Diary */ = {
 			isa = PBXGroup;
 			children = (
-				76CB69A821A3445D00D5208E /* DiaryNote.swift */,
 				76CB699321A33D8A00D5208E /* AppDelegate.swift */,
+				76CB69A821A3445D00D5208E /* DiaryNote.swift */,
+				760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */,
 				76CB699521A33D8A00D5208E /* ViewController.swift */,
-				7612FD1921AA1B0A000D8097 /* Extensions.swift */,
-				76CB699721A33D8A00D5208E /* Main.storyboard */,
 				7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */,
 				76CB69AC21A35C2E00D5208E /* CreationViewController.swift */,
+				7612FD1921AA1B0A000D8097 /* Extensions.swift */,
+				76CB699721A33D8A00D5208E /* Main.storyboard */,
 				76CB699D21A33D8A00D5208E /* Assets.xcassets */,
 				76CB699F21A33D8A00D5208E /* LaunchScreen.storyboard */,
 				76CB69A221A33D8A00D5208E /* Info.plist */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76CB699C21A33D8A00D5208E /* Diary.xcdatamodeld in Sources */,
+				760EBE0221AB3AFE0095EF42 /* TableViewCell.swift in Sources */,
 				76CB69A921A3445D00D5208E /* DiaryNote.swift in Sources */,
 				76CB699621A33D8A00D5208E /* ViewController.swift in Sources */,
 				7601A0AC21A4B60000DBF9F0 /* EditingNoteViewController.swift in Sources */,

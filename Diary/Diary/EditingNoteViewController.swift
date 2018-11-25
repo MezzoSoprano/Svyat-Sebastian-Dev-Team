@@ -12,6 +12,32 @@ class EditingNoteViewController: UIViewController {
 
     var recivedItemIndex: Int?
     
+    @IBOutlet weak var editingName: UITextField!
+    @IBOutlet weak var editingText: UITextView!
+    @IBOutlet weak var deleteOutlet: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let recivedIndex = recivedItemIndex else {
+            print("Couldnt get index")
+            return
+        }
+        
+        self.view.backgroundColor = UIColor(r: 184, g: 176, b: 170)
+        editingName.text = list[recivedIndex].name
+        editingText.text = list[recivedIndex].text
+        
+        deleteOutlet.showsTouchWhenHighlighted = true
+        deleteOutlet.layer.borderWidth = 0.7
+        deleteOutlet.layer.cornerRadius = 7
+        deleteOutlet.backgroundColor = backGroundColor
+        
+        editingName.backgroundColor = backGroundColor
+        editingText.backgroundColor = backGroundColor
+    }
+
+    
     @IBAction func deleteAction(_ sender: Any) {
         guard let recivedIndex = recivedItemIndex else {
             print("Couldnt get index")
@@ -19,22 +45,7 @@ class EditingNoteViewController: UIViewController {
         }
         list.remove(at: recivedIndex)
         _ = navigationController?.popViewController(animated: true)
-
-    }
-    
-    @IBOutlet weak var editingName: UITextField!
-    
-    @IBOutlet weak var editingText: UITextView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        guard let recivedIndex = recivedItemIndex else {
-            print("Couldnt get index")
-            return
-        }
         
-        editingName.text = list[recivedIndex].name
-        editingText.text = list[recivedIndex].text
     }
     
     @IBAction func saveEditingNote(_ sender: Any) {
@@ -46,5 +57,4 @@ class EditingNoteViewController: UIViewController {
         list[recivedIndex].name = editingName.text
         list[recivedIndex].text = editingText.text
     }
-    
 }

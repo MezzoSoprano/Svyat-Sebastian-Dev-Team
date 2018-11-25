@@ -9,11 +9,16 @@
 import UIKit
 
 class CreationViewController: UIViewController {
-
+    
+    @IBOutlet weak var InputName: UITextField!
+    @IBOutlet weak var InputText: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.view.backgroundColor = UIColor(r: 184, g: 176, b: 170)
+        InputName.backgroundColor = backGroundColor
+        InputText.backgroundColor = backGroundColor
     }
     
     @IBAction func addButton(_ sender: Any) {
@@ -22,21 +27,5 @@ class CreationViewController: UIViewController {
             InputText.text = ""
             InputName.text = ""
         }
-        
-            
     }
-    
-    @IBOutlet weak var InputName: UITextField!
-    @IBOutlet weak var InputText: UITextView!
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
