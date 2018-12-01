@@ -13,7 +13,7 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
     let cellView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(r: 184, g: 176, b: 170)
+        view.backgroundColor = Theme.currentTheme.accent
         view.setCellShadow()
         return view
     }()
@@ -22,7 +22,7 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFit
-        iv.backgroundColor = .gray
+        iv.backgroundColor = Theme.currentTheme.tint
         iv.layer.cornerRadius = 35
         return iv
     }()
@@ -31,7 +31,7 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
         let tvi = UITextView()
         tvi.setCellShadow()
         tvi.translatesAutoresizingMaskIntoConstraints = false
-        tvi.backgroundColor = UIColor(r: 184, g: 176, b: 170)
+        tvi.backgroundColor = Theme.currentTheme.accent
         tvi.isEditable = false
         return tvi
     }()
@@ -39,7 +39,7 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
     var nameLabel: UILabel = {
         let la = UILabel()
         la.translatesAutoresizingMaskIntoConstraints = false
-        la.textColor = .darkGray
+        la.textColor = Theme.currentTheme.tint
         return la
     }()
     
@@ -47,7 +47,7 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.textView.delegate = self as? UITextViewDelegate
         self.selectionStyle = .none
-        self.backgroundColor = backGroundColor
+        self.backgroundColor = Theme.currentTheme.background
         setup()
     }
     

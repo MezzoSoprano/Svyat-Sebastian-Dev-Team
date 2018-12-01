@@ -20,20 +20,26 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="NOTES" id="gjz-RR-TqI" colorLabel="IBBuiltInLabel-Red">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wGN-1I-x0f">
-                            <color key="tintColor" red="0.96862745100000003" green="0.78039215689999997" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="leftBarButtonItem" title="SETTINGS" id="Iia-7V-Rjm">
                             <connections>
-                                <segue destination="46o-vy-cWA" kind="show" id="0EZ-cy-F2T"/>
+                                <action selector="openSettings:" destination="BYZ-38-t0r" id="d5p-H1-thi"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wGN-1I-x0f">
+                            <connections>
+                                <action selector="createNewNote:" destination="BYZ-38-t0r" id="8wH-yR-iyf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="TYx-9a-GDN" kind="show" identifier="segueForPassingData" id="TXb-bL-lyN"/>
+                        <segue destination="V8c-Ez-Xcr" kind="show" identifier="settingsSegue" id="Lk3-A3-a6W"/>
+                        <segue destination="46o-vy-cWA" kind="show" identifier="segurForCreatingNote" id="f86-vD-dUG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1129" y="-564"/>
+            <point key="canvasLocation" x="1102" y="-564"/>
         </scene>
         <!--CREATING NOTE-->
         <scene sceneID="1yM-dl-eMv">
@@ -115,7 +121,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="CREATING NOTE" id="VFg-jt-E0z">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="jpx-BD-OqQ">
-                            <color key="tintColor" red="0.96862745100000003" green="0.78039215689999997" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="addButton:" destination="46o-vy-cWA" id="qIq-IZ-Hdr"/>
                             </connections>
@@ -128,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjv-Jq-AtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1925.5999999999999" y="-941.37931034482767"/>
+            <point key="canvasLocation" x="1905" y="-912"/>
         </scene>
         <!--EDITING NODE-->
         <scene sceneID="EfY-yh-PJG">
@@ -233,7 +238,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9H5-m9-dOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1925.5999999999999" y="-212.74362818590706"/>
+            <point key="canvasLocation" x="1905" y="-224"/>
+        </scene>
+        <!--SETTINGS-->
+        <scene sceneID="ICp-nI-h3U">
+            <objects>
+                <viewController id="V8c-Ez-Xcr" customClass="SettingsViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ePl-Qj-JoA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="Tqp-uu-RFC">
+                                <rect key="frame" x="10" y="74" width="355" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3I-5V-q5k">
+                                        <rect key="frame" x="0.0" y="0.0" width="249" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0nd-fh-BXI">
+                                        <rect key="frame" x="306" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="themeChanged:" destination="V8c-Ez-Xcr" eventType="valueChanged" id="NUn-dT-dwg"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="94" translatesAutoresizingMaskIntoConstraints="NO" id="aOQ-TR-0nU">
+                                <rect key="frame" x="10" y="125" width="355" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87D-Uc-16i">
+                                        <rect key="frame" x="0.0" y="10.5" width="212" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYJ-V9-Ipz">
+                                        <rect key="frame" x="306" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aOQ-TR-0nU" firstAttribute="leading" secondItem="Els-Tn-dkj" secondAttribute="leading" constant="10" id="3Je-dv-Dlq"/>
+                            <constraint firstItem="aOQ-TR-0nU" firstAttribute="top" secondItem="Tqp-uu-RFC" secondAttribute="bottom" constant="20" id="BCi-LS-g6h"/>
+                            <constraint firstItem="Tqp-uu-RFC" firstAttribute="leading" secondItem="Els-Tn-dkj" secondAttribute="leading" constant="10" id="IwS-kg-TfI"/>
+                            <constraint firstItem="Els-Tn-dkj" firstAttribute="trailing" secondItem="aOQ-TR-0nU" secondAttribute="trailing" constant="10" id="Z96-oR-sLi"/>
+                            <constraint firstItem="Els-Tn-dkj" firstAttribute="trailing" secondItem="Tqp-uu-RFC" secondAttribute="trailing" constant="10" id="aq6-dw-6TZ"/>
+                            <constraint firstItem="Tqp-uu-RFC" firstAttribute="top" secondItem="Els-Tn-dkj" secondAttribute="top" constant="10" id="hHw-y4-6aD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Els-Tn-dkj"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="SETTINGS" id="5c8-YF-02t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5rA-jz-8is" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102" y="178"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4jT-cQ-99r">
@@ -254,5 +316,5 @@
             <point key="canvasLocation" x="357.60000000000002" y="-564.46776611694156"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="0.96862745098039216" green="0.7803921568627451" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>

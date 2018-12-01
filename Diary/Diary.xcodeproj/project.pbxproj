@@ -8,22 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		7601A0AC21A4B60000DBF9F0 /* EditingNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */; };
+		7605F91C21B2E62800709DB4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F91B21B2E62800709DB4 /* SettingsViewController.swift */; };
+		7605F92321B2F95000709DB4 /* DiaryNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92221B2F95000709DB4 /* DiaryNote.swift */; };
+		7605F92821B3285000709DB4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92721B3285000709DB4 /* Extensions.swift */; };
+		7605F92A21B3298200709DB4 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92921B3298200709DB4 /* ThemeProtocol.swift */; };
+		7605F92C21B32B3900709DB4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92B21B32B3900709DB4 /* Theme.swift */; };
+		7605F92E21B32B7300709DB4 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92D21B32B7300709DB4 /* LightTheme.swift */; };
+		7605F93021B32C1800709DB4 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92F21B32C1800709DB4 /* DarkTheme.swift */; };
 		760EBE0221AB3AFE0095EF42 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */; };
-		7612FD1A21AA1B0A000D8097 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7612FD1921AA1B0A000D8097 /* Extensions.swift */; };
 		76CB699421A33D8A00D5208E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699321A33D8A00D5208E /* AppDelegate.swift */; };
 		76CB699621A33D8A00D5208E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699521A33D8A00D5208E /* ViewController.swift */; };
 		76CB699921A33D8A00D5208E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CB699721A33D8A00D5208E /* Main.storyboard */; };
 		76CB699C21A33D8A00D5208E /* Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699A21A33D8A00D5208E /* Diary.xcdatamodeld */; };
 		76CB699E21A33D8A00D5208E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CB699D21A33D8A00D5208E /* Assets.xcassets */; };
 		76CB69A121A33D8A00D5208E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CB699F21A33D8A00D5208E /* LaunchScreen.storyboard */; };
-		76CB69A921A3445D00D5208E /* DiaryNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB69A821A3445D00D5208E /* DiaryNote.swift */; };
 		76CB69AD21A35C2E00D5208E /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB69AC21A35C2E00D5208E /* CreationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingNoteViewController.swift; sourceTree = "<group>"; };
+		7605F91B21B2E62800709DB4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7605F92221B2F95000709DB4 /* DiaryNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryNote.swift; sourceTree = "<group>"; };
+		7605F92721B3285000709DB4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7605F92921B3298200709DB4 /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		7605F92B21B32B3900709DB4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		7605F92D21B32B7300709DB4 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
+		7605F92F21B32C1800709DB4 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		7612FD1921AA1B0A000D8097 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		76CB699021A33D8A00D5208E /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76CB699321A33D8A00D5208E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76CB699521A33D8A00D5208E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,7 +43,6 @@
 		76CB699D21A33D8A00D5208E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76CB69A021A33D8A00D5208E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76CB69A221A33D8A00D5208E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76CB69A821A3445D00D5208E /* DiaryNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryNote.swift; sourceTree = "<group>"; };
 		76CB69AC21A35C2E00D5208E /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +57,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7605F92121B2F8A700709DB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7605F92221B2F95000709DB4 /* DiaryNote.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7605F92521B2FA4A00709DB4 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				7605F92921B3298200709DB4 /* ThemeProtocol.swift */,
+				7605F92B21B32B3900709DB4 /* Theme.swift */,
+				7605F92D21B32B7300709DB4 /* LightTheme.swift */,
+				7605F92F21B32C1800709DB4 /* DarkTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		7605F92621B327D100709DB4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7605F92721B3285000709DB4 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		76CB698721A33D8A00D5208E = {
 			isa = PBXGroup;
 			children = (
@@ -66,13 +103,15 @@
 		76CB699221A33D8A00D5208E /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				7605F92121B2F8A700709DB4 /* Models */,
+				7605F92621B327D100709DB4 /* Extensions */,
+				7605F92521B2FA4A00709DB4 /* Theme */,
 				76CB699321A33D8A00D5208E /* AppDelegate.swift */,
-				76CB69A821A3445D00D5208E /* DiaryNote.swift */,
 				760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */,
 				76CB699521A33D8A00D5208E /* ViewController.swift */,
 				7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */,
 				76CB69AC21A35C2E00D5208E /* CreationViewController.swift */,
-				7612FD1921AA1B0A000D8097 /* Extensions.swift */,
+				7605F91B21B2E62800709DB4 /* SettingsViewController.swift */,
 				76CB699721A33D8A00D5208E /* Main.storyboard */,
 				76CB699D21A33D8A00D5208E /* Assets.xcassets */,
 				76CB699F21A33D8A00D5208E /* LaunchScreen.storyboard */,
@@ -154,13 +193,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				76CB699C21A33D8A00D5208E /* Diary.xcdatamodeld in Sources */,
+				7605F92821B3285000709DB4 /* Extensions.swift in Sources */,
+				7605F92321B2F95000709DB4 /* DiaryNote.swift in Sources */,
 				760EBE0221AB3AFE0095EF42 /* TableViewCell.swift in Sources */,
-				76CB69A921A3445D00D5208E /* DiaryNote.swift in Sources */,
+				7605F92C21B32B3900709DB4 /* Theme.swift in Sources */,
+				7605F93021B32C1800709DB4 /* DarkTheme.swift in Sources */,
 				76CB699621A33D8A00D5208E /* ViewController.swift in Sources */,
+				7605F92A21B3298200709DB4 /* ThemeProtocol.swift in Sources */,
 				7601A0AC21A4B60000DBF9F0 /* EditingNoteViewController.swift in Sources */,
 				76CB699421A33D8A00D5208E /* AppDelegate.swift in Sources */,
 				76CB69AD21A35C2E00D5208E /* CreationViewController.swift in Sources */,
-				7612FD1A21AA1B0A000D8097 /* Extensions.swift in Sources */,
+				7605F92E21B32B7300709DB4 /* LightTheme.swift in Sources */,
+				7605F91C21B2E62800709DB4 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

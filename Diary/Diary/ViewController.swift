@@ -12,30 +12,30 @@ var list = [DiaryNote(name: "Завтра в школу", text: "Ужас"), Dia
 
 var selectedItemIndex: Int?
 
-var backGroundColor: UIColor = UIColor(r: 128, g: 126, b: 124)
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tableView = UITableView()
     var tableViewConstraints: [NSLayoutConstraint] = []
     let tableCellID = "CellID"
     let segueIdentifierPassingData = "segueForPassingData"
+    let segueIdentifierCreatingNote = "segurForCreatingNote"
+    let segueIdentifierSettings = "settingsSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.background
+        
         setupTableView()
     }
     
     private func setupTableView() {
         self.view.addSubview(tableView)
-        self.view.backgroundColor = backGroundColor
         
         tableView.register(tableCell.self, forCellReuseIdentifier: tableCellID)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.contentInset = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
-        tableView.backgroundColor = backGroundColor
         
         //constarints adding
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,9 +50,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         tableView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.view.backgroundColor = Theme.currentTheme.background
+        tableView.backgroundColor = Theme.currentTheme.background
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifierPassingData {
                 let detailVC = segue.destination as! EditingNoteViewController
@@ -90,6 +96,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    @IBAction func createNewNote(_ sender: Any) {
+        performSegue(withIdentifier: segueIdentifierCreatingNote, sender: nil)
+    }
+    
+    @IBAction func openSettings(_ sender: Any) {
+        performSegue(withIdentifier: segueIdentifierSettings, sender: nil)
     }
 }
 
