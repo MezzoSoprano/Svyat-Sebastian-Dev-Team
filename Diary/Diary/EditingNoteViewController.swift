@@ -24,17 +24,17 @@ class EditingNoteViewController: UIViewController {
             return
         }
         
-        self.view.backgroundColor = Theme.currentTheme.accent
+        self.view.backgroundColor = Settings.currentTheme.accent
         editingName.text = list[recivedIndex].name
         editingText.text = list[recivedIndex].text
         
         deleteOutlet.showsTouchWhenHighlighted = true
         deleteOutlet.layer.borderWidth = 0.7
         deleteOutlet.layer.cornerRadius = 7
-        deleteOutlet.backgroundColor = Theme.currentTheme.background
+        deleteOutlet.backgroundColor = Settings.currentTheme.background
         
-        editingName.backgroundColor = Theme.currentTheme.background
-        editingText.backgroundColor = Theme.currentTheme.background
+        editingName.backgroundColor = Settings.currentTheme.background
+        editingText.backgroundColor = Settings.currentTheme.background
     }
 
     

@@ -13,7 +13,7 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
     let cellView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Theme.currentTheme.accent
+        //view.backgroundColor = Settings.currentTheme.accent
         view.setCellShadow()
         return view
     }()
@@ -22,7 +22,7 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFit
-        iv.backgroundColor = Theme.currentTheme.tint
+        //iv.backgroundColor = Settings.currentTheme.tint
         iv.layer.cornerRadius = 35
         return iv
     }()
@@ -31,7 +31,7 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
         let tvi = UITextView()
         tvi.setCellShadow()
         tvi.translatesAutoresizingMaskIntoConstraints = false
-        tvi.backgroundColor = Theme.currentTheme.accent
+        //tvi.backgroundColor = Settings.currentTheme.accent
         tvi.isEditable = false
         return tvi
     }()
@@ -39,7 +39,7 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
     var nameLabel: UILabel = {
         let la = UILabel()
         la.translatesAutoresizingMaskIntoConstraints = false
-        la.textColor = Theme.currentTheme.tint
+        //la.textColor = Settings.currentTheme.tint
         return la
     }()
     
@@ -47,7 +47,8 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.textView.delegate = self as? UITextViewDelegate
         self.selectionStyle = .none
-        self.backgroundColor = Theme.currentTheme.background
+        
+        applyTheme()
         setup()
     }
     
@@ -81,6 +82,13 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
         textView.bottomAnchor.constraint(equalTo: cellView.bottomAnchor, constant: -10).isActive = true
     }
     
+    func applyTheme() {
+        self.backgroundColor = Settings.currentTheme.background
+        self.nameLabel.textColor = Settings.currentTheme.tint
+        self.textView.backgroundColor = Settings.currentTheme.accent
+        self.pictureImageView.backgroundColor = Settings.currentTheme.tint
+        self.cellView.backgroundColor = Settings.currentTheme.accent
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

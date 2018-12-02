@@ -16,9 +16,9 @@ class CreationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = Theme.currentTheme.accent
-        InputName.backgroundColor = Theme.currentTheme.background
-        InputText.backgroundColor = Theme.currentTheme.background
+        self.view.backgroundColor = Settings.currentTheme.accent
+        InputName.backgroundColor = Settings.currentTheme.background
+        InputText.backgroundColor = Settings.currentTheme.background
     }
     
     @IBAction func addButton(_ sender: Any) {

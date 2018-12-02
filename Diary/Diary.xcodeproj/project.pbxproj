@@ -12,7 +12,6 @@
 		7605F92321B2F95000709DB4 /* DiaryNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92221B2F95000709DB4 /* DiaryNote.swift */; };
 		7605F92821B3285000709DB4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92721B3285000709DB4 /* Extensions.swift */; };
 		7605F92A21B3298200709DB4 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92921B3298200709DB4 /* ThemeProtocol.swift */; };
-		7605F92C21B32B3900709DB4 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92B21B32B3900709DB4 /* Theme.swift */; };
 		7605F92E21B32B7300709DB4 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92D21B32B7300709DB4 /* LightTheme.swift */; };
 		7605F93021B32C1800709DB4 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92F21B32C1800709DB4 /* DarkTheme.swift */; };
 		760EBE0221AB3AFE0095EF42 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */; };
@@ -31,7 +30,6 @@
 		7605F92221B2F95000709DB4 /* DiaryNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryNote.swift; sourceTree = "<group>"; };
 		7605F92721B3285000709DB4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7605F92921B3298200709DB4 /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
-		7605F92B21B32B3900709DB4 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7605F92D21B32B7300709DB4 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
 		7605F92F21B32C1800709DB4 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				7605F92921B3298200709DB4 /* ThemeProtocol.swift */,
-				7605F92B21B32B3900709DB4 /* Theme.swift */,
 				7605F92D21B32B7300709DB4 /* LightTheme.swift */,
 				7605F92F21B32C1800709DB4 /* DarkTheme.swift */,
 			);
@@ -196,7 +193,6 @@
 				7605F92821B3285000709DB4 /* Extensions.swift in Sources */,
 				7605F92321B2F95000709DB4 /* DiaryNote.swift in Sources */,
 				760EBE0221AB3AFE0095EF42 /* TableViewCell.swift in Sources */,
-				7605F92C21B32B3900709DB4 /* Theme.swift in Sources */,
 				7605F93021B32C1800709DB4 /* DarkTheme.swift in Sources */,
 				76CB699621A33D8A00D5208E /* ViewController.swift in Sources */,
 				7605F92A21B3298200709DB4 /* ThemeProtocol.swift in Sources */,

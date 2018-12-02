@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.background
+        self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
         
         setupTableView()
     }
@@ -56,8 +56,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.view.backgroundColor = Theme.currentTheme.background
-        tableView.backgroundColor = Theme.currentTheme.background
+        self.view.backgroundColor = Settings.currentTheme.background
+        tableView.backgroundColor = Settings.currentTheme.background
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifierPassingData {
@@ -96,6 +96,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // how to update the theme of table cell here and if it's real ?? done
+        let applyThemeCell = cell as! tableCell
+        applyThemeCell.applyTheme()
     }
     
     @IBAction func createNewNote(_ sender: Any) {

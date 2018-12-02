@@ -292,6 +292,9 @@
                         <viewLayoutGuide key="safeArea" id="Els-Tn-dkj"/>
                     </view>
                     <navigationItem key="navigationItem" title="SETTINGS" id="5c8-YF-02t"/>
+                    <connections>
+                        <outlet property="themeSwitch" destination="0nd-fh-BXI" id="Vr8-rt-GXs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5rA-jz-8is" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
