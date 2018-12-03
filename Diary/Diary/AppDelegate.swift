@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Settings.currentTheme = UserDefaults.standard.bool(forKey: "LightTheme") ? LightTheme() : DarkTheme()
         }
         if UserDefaults.standard.object(forKey: "CollectionView") != nil{
-            Settings.isCollectionView = UserDefaults.standard.bool(forKey: "CollectionView") ? false : true
+            Settings.isCollectionView = UserDefaults.standard.bool(forKey: "CollectionView") ? true : false
         }
         
         
