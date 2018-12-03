@@ -15,7 +15,8 @@ class EditingNoteViewController: UIViewController {
     @IBOutlet weak var editingName: UITextField!
     @IBOutlet weak var editingText: UITextView!
     @IBOutlet weak var deleteOutlet: UIButton!
-    
+    @IBOutlet weak var editingPicture: UIImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,9 +36,12 @@ class EditingNoteViewController: UIViewController {
         
         editingName.backgroundColor = Settings.currentTheme.background
         editingText.backgroundColor = Settings.currentTheme.background
+        
+        editingPicture.backgroundColor = Settings.currentTheme.background
+        
+        editingPicture.backgroundColor = Settings.currentTheme.background
     }
 
-    
     @IBAction func deleteAction(_ sender: Any) {
         guard let recivedIndex = recivedItemIndex else {
             print("Couldnt get index")

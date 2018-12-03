@@ -10,22 +10,24 @@ import UIKit
 
 class CreationViewController: UIViewController {
     
-    @IBOutlet weak var InputName: UITextField!
-    @IBOutlet weak var InputText: UITextView!
+    @IBOutlet weak var inputName: UITextField!
+    @IBOutlet weak var inputText: UITextView!
+    @IBOutlet weak var inputImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = Settings.currentTheme.accent
-        InputName.backgroundColor = Settings.currentTheme.background
-        InputText.backgroundColor = Settings.currentTheme.background
+        inputName.backgroundColor = Settings.currentTheme.background
+        inputImage.backgroundColor = Settings.currentTheme.background
+        inputText.backgroundColor = Settings.currentTheme.background
     }
     
     @IBAction func addButton(_ sender: Any) {
-        if InputName.text != "" && InputText.text != "" {
-            list.append(DiaryNote(name: InputName.text, text: InputText.text))
-            InputText.text = ""
-            InputName.text = ""
+        if inputName.text != "" && inputText.text != "" {
+            list.append(DiaryNote(name: inputName.text, text: inputText.text))
+            inputText.text = ""
+            inputName.text = ""
         }
     }
 }
