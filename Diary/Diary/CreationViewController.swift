@@ -18,9 +18,16 @@ class CreationViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = Settings.currentTheme.accent
-        inputName.backgroundColor = Settings.currentTheme.background
-        inputImage.backgroundColor = Settings.currentTheme.background
+        
+        inputText.setCellShadow()
         inputText.backgroundColor = Settings.currentTheme.background
+        inputText.isScrollEnabled = true
+        
+        inputName.setCellShadow()
+        inputName.backgroundColor = Settings.currentTheme.background
+
+        inputImage.setCellShadow()
+        inputImage.backgroundColor = Settings.currentTheme.background
     }
     
     @IBAction func addButton(_ sender: Any) {

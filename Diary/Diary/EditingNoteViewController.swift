@@ -29,16 +29,17 @@ class EditingNoteViewController: UIViewController {
         editingName.text = list[recivedIndex].name
         editingText.text = list[recivedIndex].text
         
+        deleteOutlet.setCellShadow()
         deleteOutlet.showsTouchWhenHighlighted = true
-        deleteOutlet.layer.borderWidth = 0.7
-        deleteOutlet.layer.cornerRadius = 7
         deleteOutlet.backgroundColor = Settings.currentTheme.background
         
+        editingName.setCellShadow()
+        editingText.isScrollEnabled = true
         editingName.backgroundColor = Settings.currentTheme.background
         editingText.backgroundColor = Settings.currentTheme.background
         
+        editingPicture.setCellShadow()
         editingPicture.backgroundColor = Settings.currentTheme.background
-        
         editingPicture.backgroundColor = Settings.currentTheme.background
     }
 

@@ -99,8 +99,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellID, for: indexPath) as! customCollectionCell
-        myCell.backgroundColor = Settings.currentTheme.accent
-        myCell.layer.cornerRadius = 5
         myCell.nameLabel.text = list[indexPath.row].name
         myCell.textLabel.text = list[indexPath.row].text
         return myCell
