@@ -74,7 +74,7 @@ class EditingNoteViewController: UIViewController, UIGestureRecognizerDelegate, 
             print("Couldnt get index")
             return
         }
-        coreData.edit(name: editingName.text!, text: editingText.text!)
+        coreData.edit(name: editingName.text!, text: editingText.text!, image: editingPicture.image)
         
         list[recivedIndex].name = editingName.text
         list[recivedIndex].text = editingText.text

@@ -28,24 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let context = coreData.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
-        
-        request.returnsObjectsAsFaults = false
-        do {
-            let results =  try context.fetch(request)
-            
-            if (results.count > 0) {
-                for result in results as! [NSManagedObject] {
-                    if let name = result.value(forKey: "name") as? String, let text = result.value(forKey: "text") as? String {
-                        list.append(DiaryNote(name: name, text: text))
-                    }
-                }
-            }
-            
-        } catch {
-            print("Error while loading data")
-        }
+        coreData.load()
         
         self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
     }
@@ -161,6 +144,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("Note was deleted: \(list[indexPath.row].name ?? "couldn't get note")")
+            coreData.delete(at: indexPath.row)
             list.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
