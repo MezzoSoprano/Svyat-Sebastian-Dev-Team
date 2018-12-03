@@ -8,11 +8,12 @@
 
 import UIKit
 
-class CreationViewController: UIViewController {
+class CreationViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var inputName: UITextField!
     @IBOutlet weak var inputText: UITextView!
     @IBOutlet weak var inputImage: UIImageView!
+    @IBOutlet weak var importImageOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +29,37 @@ class CreationViewController: UIViewController {
 
         inputImage.setCellShadow()
         inputImage.backgroundColor = Settings.currentTheme.background
+        
+        importImageOutlet.setCellShadow()
+        importImageOutlet.showsTouchWhenHighlighted = true
+        importImageOutlet.backgroundColor = Settings.currentTheme.background
     }
     
     @IBAction func addButton(_ sender: Any) {
         if inputName.text != "" && inputText.text != "" {
-            list.append(DiaryNote(name: inputName.text, text: inputText.text))
+            list.append(DiaryNote(name: inputName.text, text: inputText.text, image: inputImage.image))
             inputText.text = ""
             inputName.text = ""
+            inputImage.image = nil
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            inputImage.image = image
+        } else {
+            print("Couldn't get image")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func importImage(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        
+        image.allowsEditing = false
+        self.present(image, animated: true)
     }
 }

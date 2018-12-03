@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditingNoteViewController: UIViewController {
+class EditingNoteViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var recivedItemIndex: Int?
     
@@ -28,21 +28,30 @@ class EditingNoteViewController: UIViewController {
         self.view.backgroundColor = Settings.currentTheme.accent
         editingName.text = list[recivedIndex].name
         editingText.text = list[recivedIndex].text
+        editingPicture.image = list[recivedIndex].image
         
         deleteOutlet.setCellShadow()
         deleteOutlet.showsTouchWhenHighlighted = true
         deleteOutlet.backgroundColor = Settings.currentTheme.background
         
         editingName.setCellShadow()
-        editingText.isScrollEnabled = true
         editingName.backgroundColor = Settings.currentTheme.background
+        
+        editingText.setCellShadow()
+        editingText.isScrollEnabled = true
         editingText.backgroundColor = Settings.currentTheme.background
         
         editingPicture.setCellShadow()
         editingPicture.backgroundColor = Settings.currentTheme.background
-        editingPicture.backgroundColor = Settings.currentTheme.background
+        
+        //enabling photo picking when photo clicked
+//        var UITapRecognizer = UITapGestureRecognizer(target: self, action: "tappedImage:")
+//        UITapRecognizer.delegate = self
+//        self.editingPicture.addGestureRecognizer(UITapRecognizer)
+//        self.editingPicture.isUserInteractionEnabled = true
+        
     }
-
+    
     @IBAction func deleteAction(_ sender: Any) {
         guard let recivedIndex = recivedItemIndex else {
             print("Couldnt get index")
@@ -61,5 +70,25 @@ class EditingNoteViewController: UIViewController {
         
         list[recivedIndex].name = editingName.text
         list[recivedIndex].text = editingText.text
+        list[recivedIndex].image = editingPicture.image
+    }
+    
+    @IBAction func imageTapped(_ sender: Any) {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerController.SourceType.photoLibrary
+        
+        image.allowsEditing = false
+        self.present(image, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            editingPicture.image = image
+        } else {
+            print("Couldn't get image")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }

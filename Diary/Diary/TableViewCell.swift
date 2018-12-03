@@ -21,9 +21,10 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
     var pictureImageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         //iv.backgroundColor = Settings.currentTheme.tint
         iv.layer.cornerRadius = 35
+        iv.clipsToBounds = true
         return iv
     }()
     
@@ -54,9 +55,9 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
     
     func setup() {
         addSubview(cellView)
-        cellView.addSubview(self.pictureImageView)
         cellView.addSubview(self.nameLabel)
         cellView.addSubview(self.textView)
+        cellView.addSubview(self.pictureImageView)
         
         //cellview constraits
         cellView.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
