@@ -125,6 +125,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellID, for: indexPath) as! customCollectionCell
         myCell.nameLabel.text = list[indexPath.row].name
         myCell.textLabel.text = list[indexPath.row].text
+        myCell.pictureImageView.image = list[indexPath.row].image
         return myCell
     }
 
@@ -169,6 +170,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: tableCellID, for: indexPath) as! tableCell
         cell.nameLabel.text = list[indexPath.row].name
         cell.textView.text = list[indexPath.row].text
+        cell.pictureImageView.image = list[indexPath.row].image
         return cell
     }
     
@@ -177,7 +179,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        // how to update the theme of table cell here and if it's real ?? done
         let applyThemeCell = cell as! tableCell
         applyThemeCell.applyTheme()
     }

@@ -20,8 +20,9 @@ class customCollectionCell: UICollectionViewCell {
     var pictureImageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
         iv.backgroundColor = UIColor.lightText
+        iv.clipsToBounds = true
         //iv.backgroundColor = Settings.currentTheme.tint
         iv.layer.cornerRadius = 5
         return iv
