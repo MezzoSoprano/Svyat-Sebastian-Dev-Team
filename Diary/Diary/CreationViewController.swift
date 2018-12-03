@@ -41,10 +41,7 @@ class CreationViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBAction func addButton(_ sender: Any) {
         if inputName.text != "" && inputText.text != "" {
             coreData.add(name: inputName.text!, text: inputText.text!)
-            list.append(DiaryNote(name: inputName.text, text: inputText.text))
-//=======
-//            list.append(DiaryNote(name: inputName.text, text: inputText.text, image: inputImage.image))
-//>>>>>>> a7ec3e6ba1dbd20bf6728eae6c41dd8b3e38e3ab
+            list.append(DiaryNote(name: inputName.text, text: inputText.text, image: inputImage.image))
             inputText.text = ""
             inputName.text = ""
             inputImage.image = nil
