@@ -16,9 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        if UserDefaults.standard.object(forKey: "LightTheme") != nil {
+        if UserDefaults.standard.object(forKey: "LightTheme") != nil{
             Settings.currentTheme = UserDefaults.standard.bool(forKey: "LightTheme") ? LightTheme() : DarkTheme()
         }
+        if UserDefaults.standard.object(forKey: "CollectionView") != nil{
+            Settings.isCollectionView = UserDefaults.standard.bool(forKey: "CollectionView") ? true : false
+        }
+        
         
         return true
     }
