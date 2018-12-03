@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EditingNoteViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class EditingNoteViewController: UIViewController {
     @IBOutlet weak var editingText: UITextView!
     @IBOutlet weak var deleteOutlet: UIButton!
     @IBOutlet weak var editingPicture: UIImageView!
+    
+    let coreData = CoreDataStack()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +52,10 @@ class EditingNoteViewController: UIViewController {
             return
         }
         list.remove(at: recivedIndex)
+        
+        if editingName.text != "" && editingName.text != "" {
+            coreData.delete()
+        }
         _ = navigationController?.popViewController(animated: true)
         
     }
@@ -58,6 +65,7 @@ class EditingNoteViewController: UIViewController {
             print("Couldnt get index")
             return
         }
+        coreData.edit(name: editingName.text!, text: editingText.text!)
         
         list[recivedIndex].name = editingName.text
         list[recivedIndex].text = editingText.text

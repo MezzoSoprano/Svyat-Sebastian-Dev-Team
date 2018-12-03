@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiaryNote {
+class DiaryNote: NSObject, NSCoding {
     
     let creationDate: Date = Date()
     
@@ -50,7 +50,7 @@ class DiaryNote {
         }
     }
     
-    init ()
+    override init ()
     {
         name = ""
         text = ""
@@ -63,6 +63,16 @@ class DiaryNote {
         self.text = text
         self.tags = tags
         self.image = image
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObject(forKey: "name") as? String
+        text = aDecoder.decodeObject(forKey: "text") as? String
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(text, forKey: "text")
     }
     
     func simpleDescription() -> String {

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
-var list = [DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote(name: "Ujac", text: "Ужас"), DiaryNote(name: "Hi man", text: "Ужас"), DiaryNote(name: "Make HW", text: "Immediately"), DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote(name: "Ujac", text: "Ужас"),DiaryNote(name: "Hi man", text: "Ужас")]
+//var list = [DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote(name: "Ujac", text: "Ужас"), DiaryNote(name: "Hi man", text: "Ужас"), DiaryNote(name: "Make HW", text: "Immediately"), DiaryNote(name: "Завтра в школу", text: "Ужас"), DiaryNote(name: "Ujac", text: "Ужас"),DiaryNote(name: "Hi man", text: "Ужас")]
+var list: [DiaryNote] = []
+let coreData = CoreDataStack()
 
 var selectedItemIndex: Int?
 
@@ -25,6 +28,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let context = coreData.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+        
+        request.returnsObjectsAsFaults = false
+        do {
+            let results =  try context.fetch(request)
+            
+            if (results.count > 0) {
+                for result in results as! [NSManagedObject] {
+                    if let name = result.value(forKey: "name") as? String, let text = result.value(forKey: "text") as? String {
+                        list.append(DiaryNote(name: name, text: text))
+                    }
+                }
+            }
+            
+        } catch {
+            print("Error while loading data")
+        }
+        
         self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
     }
     
@@ -81,6 +103,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        
         if(Settings.isCollectionView == true)
         {
             setupCollectionView()
