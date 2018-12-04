@@ -15,6 +15,7 @@
 		7605F92E21B32B7300709DB4 /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92D21B32B7300709DB4 /* LightTheme.swift */; };
 		7605F93021B32C1800709DB4 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7605F92F21B32C1800709DB4 /* DarkTheme.swift */; };
 		760EBE0221AB3AFE0095EF42 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */; };
+		767385AD21B5F23A00BBA2FC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767385AC21B5F23A00BBA2FC /* RootViewController.swift */; };
 		76CB699421A33D8A00D5208E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699321A33D8A00D5208E /* AppDelegate.swift */; };
 		76CB699621A33D8A00D5208E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699521A33D8A00D5208E /* ViewController.swift */; };
 		76CB699C21A33D8A00D5208E /* Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76CB699A21A33D8A00D5208E /* Diary.xcdatamodeld */; };
@@ -37,6 +38,7 @@
 		7605F92D21B32B7300709DB4 /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
 		7605F92F21B32C1800709DB4 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		767385AC21B5F23A00BBA2FC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		76CB699021A33D8A00D5208E /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76CB699321A33D8A00D5208E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76CB699521A33D8A00D5208E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				76CB699321A33D8A00D5208E /* AppDelegate.swift */,
 				760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */,
 				9E3853D721B4427000269923 /* CollectionViewCell-Layout.swift */,
+				767385AC21B5F23A00BBA2FC /* RootViewController.swift */,
 				76CB699521A33D8A00D5208E /* ViewController.swift */,
 				7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */,
 				76CB69AC21A35C2E00D5208E /* CreationViewController.swift */,
@@ -281,6 +284,7 @@
 				7605F92321B2F95000709DB4 /* DiaryNote.swift in Sources */,
 				760EBE0221AB3AFE0095EF42 /* TableViewCell.swift in Sources */,
 				7605F93021B32C1800709DB4 /* DarkTheme.swift in Sources */,
+				767385AD21B5F23A00BBA2FC /* RootViewController.swift in Sources */,
 				76CB699621A33D8A00D5208E /* ViewController.swift in Sources */,
 				7605F92A21B3298200709DB4 /* ThemeProtocol.swift in Sources */,
 				9EEF2A5721B5A2070027B5EF /* CoreDataStack.swift in Sources */,

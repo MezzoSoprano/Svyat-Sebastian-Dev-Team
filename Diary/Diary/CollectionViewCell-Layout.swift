@@ -92,7 +92,7 @@ class customCollectionCell: UICollectionViewCell {
     }
     
     func applyTheme() {
-        self.backgroundColor = Settings.currentTheme.background
+        self.backgroundColor = Settings.currentTheme.accent
         self.pictureImageView.backgroundColor = Settings.currentTheme.tint
         self.setCellShadow()
     }
