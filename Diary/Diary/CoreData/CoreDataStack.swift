@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CoreGraphics
 
 final class CoreDataStack {
     
@@ -38,17 +39,50 @@ final class CoreDataStack {
         }
     }
     
-    func add (name: String, text: String) {
+    func load () {
+        let context = coreData.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+        
+        request.returnsObjectsAsFaults = false
+        do {
+            let results =  try context.fetch(request)
+            
+            if (results.count > 0) {
+                for result in results as! [NSManagedObject] {
+                    if let name = result.value(forKey: "name") as? String, let text = result.value(forKey: "text") as? String {
+                        if(result.value(forKey: "image") != nil) {
+                            let image: UIImage = (UIImage(data: result.value(forKey: "image") as! Data))!
+                            list.append(DiaryNote(name: name, text: text, image: image))
+                        }
+                        else {
+                            list.append(DiaryNote(name: name, text: text))
+                        }
+                    } 
+                }
+            }
+            
+        } catch {
+            let nserror = error as NSError
+            print("Error while loading data \(nserror), \(nserror.userInfo)")
+        }
+    }
+    
+    func add (name: String, text: String, image: UIImage?) {
         let context = coreData.persistentContainer.viewContext
         let newNote = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context)
         
         newNote.setValue(name, forKey: "name")
         newNote.setValue(text, forKey: "text")
+        if image != nil {
+            let data: NSData = image!.pngData()! as NSData
+            newNote.setValue(data, forKey: "image")
+        }
         do {
             try context.save()
         }
         catch {
-            print("Context save error")
+            let nserror = error as NSError
+            print("Context save error \(nserror), \(nserror.userInfo)")
         }
     }
     
@@ -65,27 +99,52 @@ final class CoreDataStack {
             }
             try context.save()
         } catch {
-            print("Error while deleting data")
+            let nserror = error as NSError
+            print("Error while deleting data \(nserror), \(nserror.userInfo)")
         }
     }
     
-    func edit (name: String, text: String) {
+    func delete (at: Int) {
         let context = coreData.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         
         request.returnsObjectsAsFaults = false
         do {
             let results =  try context.fetch(request)
+            if (results.count > 0) {
+                let result = results[at] as! NSManagedObject
+                context.delete(result)
+            }
+            try context.save()
+        } catch {
+            let nserror = error as NSError
+            print("Error while deleting data \(nserror), \(nserror.userInfo)")
+        }
+    }
+    
+    func edit (name: String, text: String, image: UIImage?) {
+        let context = coreData.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results =  try context.fetch(request)
             if (results.count > 0 && selectedItemIndex != nil) {
                 let result = results[selectedItemIndex!] as! NSManagedObject
                 result.setValue(name, forKey: "name")
                 result.setValue(text, forKey: "text")
+                if image != nil {
+                    let data: NSData = image!.pngData()! as NSData
+                    result.setValue(data, forKey: "image")
+                }
             }
             
             try context.save()
             
         } catch {
-            print("Error while deleting data")
+            let nserror = error as NSError
+            print("Error while deleting data \(nserror), \(nserror.userInfo)")
         }
     }
 }
