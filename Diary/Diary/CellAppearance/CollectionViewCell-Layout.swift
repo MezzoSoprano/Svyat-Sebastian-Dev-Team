@@ -31,7 +31,7 @@ class customCollectionCell: UICollectionViewCell {
     var nameLabel: UILabel = {
         let la = UILabel()
         la.translatesAutoresizingMaskIntoConstraints = false
-        la.adjustsFontSizeToFitWidth = true
+        //la.adjustsFontSizeToFitWidth = true
         //la.textColor = Settings.currentTheme.tint
         return la
     }()
@@ -78,6 +78,7 @@ class customCollectionCell: UICollectionViewCell {
         //name label constraints
         nameLabel.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 10).isActive = true
         nameLabel.topAnchor.constraint(equalTo: pictureImageView.bottomAnchor, constant: 10).isActive = true
+        nameLabel.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -10).isActive = true
         
         //divider constraints
         dividerLine.leftAnchor.constraint(equalTo: cellView.leftAnchor, constant: 5).isActive = true

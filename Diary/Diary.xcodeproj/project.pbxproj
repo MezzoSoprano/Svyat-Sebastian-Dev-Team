@@ -92,6 +92,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		76BAFEBE21BC1EBC008CF640 /* CellAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */,
+				9E3853D721B4427000269923 /* CollectionViewCell-Layout.swift */,
+			);
+			path = CellAppearance;
+			sourceTree = "<group>";
+		};
 		76CB698721A33D8A00D5208E = {
 			isa = PBXGroup;
 			children = (
@@ -113,13 +122,12 @@
 		76CB699221A33D8A00D5208E /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				76BAFEBE21BC1EBC008CF640 /* CellAppearance */,
 				9EEF2A5521B5A1E40027B5EF /* CoreData */,
 				7605F92121B2F8A700709DB4 /* Models */,
 				7605F92621B327D100709DB4 /* Extensions */,
 				7605F92521B2FA4A00709DB4 /* Theme */,
 				76CB699321A33D8A00D5208E /* AppDelegate.swift */,
-				760EBE0121AB3AFE0095EF42 /* TableViewCell.swift */,
-				9E3853D721B4427000269923 /* CollectionViewCell-Layout.swift */,
 				767385AC21B5F23A00BBA2FC /* RootViewController.swift */,
 				76CB699521A33D8A00D5208E /* ViewController.swift */,
 				7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */,
@@ -260,12 +268,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Diary/Pods-Diary-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Locksmith/Locksmith.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Locksmith.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

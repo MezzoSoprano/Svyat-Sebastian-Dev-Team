@@ -1,16 +1,20 @@
 PODS:
   - KeychainAccess (3.1.2)
+  - Locksmith (4.0.0)
 
 DEPENDENCIES:
   - KeychainAccess
+  - Locksmith
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - KeychainAccess
+    - Locksmith
 
 SPEC CHECKSUMS:
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
 
-PODFILE CHECKSUM: 3ba38160f6543f788a494d5f3a50127dff905d50
+PODFILE CHECKSUM: 1f6d945ac932a3e9ea6ca5f30660eb92d2be1fe4
 
 COCOAPODS: 1.5.3

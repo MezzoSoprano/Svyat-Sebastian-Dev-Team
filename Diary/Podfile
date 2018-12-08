@@ -4,5 +4,6 @@ target 'Diary' do
   use_frameworks!
 
 pod 'KeychainAccess'
+pod 'Locksmith'
 
 end

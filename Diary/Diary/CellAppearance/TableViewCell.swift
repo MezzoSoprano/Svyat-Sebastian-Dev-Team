@@ -13,7 +13,6 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
     let cellView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.backgroundColor = Settings.currentTheme.accent
         view.setCellShadow()
         return view
     }()
@@ -22,7 +21,6 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
-        //iv.backgroundColor = Settings.currentTheme.tint
         iv.layer.cornerRadius = 35
         iv.clipsToBounds = true
         return iv
@@ -32,15 +30,15 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
         let tvi = UITextView()
         tvi.setCellShadow()
         tvi.translatesAutoresizingMaskIntoConstraints = false
-        //tvi.backgroundColor = Settings.currentTheme.accent
         tvi.isEditable = false
+        tvi.isScrollEnabled = false
+        
         return tvi
     }()
     
     var nameLabel: UILabel = {
         let la = UILabel()
         la.translatesAutoresizingMaskIntoConstraints = false
-        //la.textColor = Settings.currentTheme.tint
         return la
     }()
     
@@ -72,9 +70,11 @@ class tableCell: UITableViewCell, UITextFieldDelegate {
         pictureImageView.centerYAnchor.constraint(equalTo: cellView.centerYAnchor).isActive = true
         
         //name label constraits
-        nameLabel.centerXAnchor.constraint(equalTo: cellView.centerXAnchor).isActive = true
+        nameLabel.textAlignment = .center
+        nameLabel.centerXAnchor.constraint(equalTo: textView.centerXAnchor).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        nameLabel.centerYAnchor.constraint(equalToSystemSpacingBelow: cellView.centerYAnchor, multiplier: 2)
+        nameLabel.leftAnchor.constraint(equalTo: pictureImageView.rightAnchor, constant: 10).isActive = true
+        nameLabel.rightAnchor.constraint(equalTo: cellView.rightAnchor, constant: -10).isActive = true
         
         //text view constraits
         textView.leftAnchor.constraint(equalTo: pictureImageView.rightAnchor, constant: 10).isActive = true
