@@ -74,7 +74,7 @@ final class CoreDataStack {
         newNote.setValue(name, forKey: "name")
         newNote.setValue(text, forKey: "text")
         if image != nil {
-            let data: NSData = image!.pngData()! as NSData
+            let data: NSData = image!.jpegData(compressionQuality: 1)! as NSData
             newNote.setValue(data, forKey: "image")
         }
         do {
@@ -135,7 +135,7 @@ final class CoreDataStack {
                 result.setValue(name, forKey: "name")
                 result.setValue(text, forKey: "text")
                 if image != nil {
-                    let data: NSData = image!.pngData()! as NSData
+                    let data: NSData = image!.jpegData(compressionQuality: 1)! as NSData
                     result.setValue(data, forKey: "image")
                 }
             }
