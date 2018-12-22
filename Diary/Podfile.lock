@@ -1,20 +1,24 @@
 PODS:
+  - Alamofire (4.8.0)
   - KeychainAccess (3.1.2)
   - Locksmith (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - KeychainAccess
   - Locksmith
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - KeychainAccess
     - Locksmith
 
 SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Locksmith: e9bebbaaa4cee3c511bc358a44f843c3fe00e21f
 
-PODFILE CHECKSUM: 1f6d945ac932a3e9ea6ca5f30660eb92d2be1fe4
+PODFILE CHECKSUM: 1acd5372c1b26143f001fd5633736eeab4ac3a06
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2

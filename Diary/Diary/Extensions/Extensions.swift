@@ -99,3 +99,17 @@ extension ViewController : UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 }
+
+extension UIImage {
+    convenience init?(url: URL?) {
+        guard let url = url else { return nil }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            self.init(data: data)
+        } catch {
+            print("Cannot load image from url: \(url) with error: \(error)")
+            return nil
+        }
+    }
+}

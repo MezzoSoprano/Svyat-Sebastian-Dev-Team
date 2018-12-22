@@ -47,12 +47,6 @@ class EditingNoteViewController: UIViewController, UIGestureRecognizerDelegate, 
         editingPicture.setCellShadow()
         editingPicture.backgroundColor = Settings.currentTheme.background
         
-        //enabling photo picking when photo clicked
-//        var UITapRecognizer = UITapGestureRecognizer(target: self, action: "tappedImage:")
-//        UITapRecognizer.delegate = self
-//        self.editingPicture.addGestureRecognizer(UITapRecognizer)
-//        self.editingPicture.isUserInteractionEnabled = true
-        
     }
     
     @IBAction func deleteAction(_ sender: Any) {

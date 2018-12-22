@@ -28,7 +28,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         coreData.load()
-        
         self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
     }
     
@@ -81,6 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             collectionView.removeFromSuperview()
             tableView.reloadData()
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

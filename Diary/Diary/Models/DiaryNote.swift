@@ -65,17 +65,17 @@ class DiaryNote: NSObject, NSCoding {
         self.image = image
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required init? (coder aDecoder: NSCoder) {
         name = aDecoder.decodeObject(forKey: "name") as? String
         text = aDecoder.decodeObject(forKey: "text") as? String
     }
     
-    func encode(with aCoder: NSCoder) {
+    func encode (with aCoder: NSCoder) {
         aCoder.encode(name, forKey: "name")
         aCoder.encode(text, forKey: "text")
     }
     
-    func simpleDescription() -> String {
+    func simpleDescription () -> String {
         
         let str1 = (name != nil ? "\"\(name!)\" \n\n" : "") + (text != nil ? "\(text!) \n\n" : "") + "\n\n \(creationDateFormatted)"
         
@@ -95,7 +95,7 @@ class user {
     var email: String
     var notes: [DiaryNote?]
     
-    init(email: String, notes: [DiaryNote?]) {
+    init (email: String, notes: [DiaryNote?]) {
         self.email = email
         self.notes = notes
     }

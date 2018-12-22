@@ -18,7 +18,7 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         SignInUotlet.layer.cornerRadius = 3
         SignUpOutlet.layer.cornerRadius = 3
     }
