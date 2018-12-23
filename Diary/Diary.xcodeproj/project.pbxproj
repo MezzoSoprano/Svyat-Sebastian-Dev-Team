@@ -27,6 +27,7 @@
 		76CB69AD21A35C2E00D5208E /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB69AC21A35C2E00D5208E /* CreationViewController.swift */; };
 		8C95A4AB86233F62B1C16684 /* Pods_Diary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B261C4718A596040287E54B2 /* Pods_Diary.framework */; };
 		9E3853D821B4427000269923 /* CollectionViewCell-Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3853D721B4427000269923 /* CollectionViewCell-Layout.swift */; };
+		9E66DA4721D026450084BF17 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66DA4621D026450084BF17 /* SettingsController.swift */; };
 		9EEF2A5721B5A2070027B5EF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEF2A5621B5A2070027B5EF /* CoreDataStack.swift */; };
 		9EEF2A5C21B5D76A0027B5EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EEF2A5B21B5D76A0027B5EF /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		76CB69AC21A35C2E00D5208E /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 		853D215392FB53DD841FF026 /* Pods-Diary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diary/Pods-Diary.release.xcconfig"; sourceTree = "<group>"; };
 		9E3853D721B4427000269923 /* CollectionViewCell-Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell-Layout.swift"; sourceTree = "<group>"; };
+		9E66DA4621D026450084BF17 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		9EEF2A5621B5A2070027B5EF /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		9EEF2A5B21B5D76A0027B5EF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B261C4718A596040287E54B2 /* Pods_Diary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Diary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,8 @@
 		76CB699221A33D8A00D5208E /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				9E66DA4521D0262C0084BF17 /* Controllers */,
+				9E66DA4421D026040084BF17 /* Views */,
 				76A9E0E821CE3DF400051D61 /* document.json */,
 				76AC7BDC21C93D24008193C4 /* Networking */,
 				76BAFEBE21BC1EBC008CF640 /* CellAppearance */,
@@ -145,11 +149,6 @@
 				7605F92621B327D100709DB4 /* Extensions */,
 				7605F92521B2FA4A00709DB4 /* Theme */,
 				76CB699321A33D8A00D5208E /* AppDelegate.swift */,
-				767385AC21B5F23A00BBA2FC /* RootViewController.swift */,
-				76CB699521A33D8A00D5208E /* ViewController.swift */,
-				7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */,
-				76CB69AC21A35C2E00D5208E /* CreationViewController.swift */,
-				7605F91B21B2E62800709DB4 /* SettingsViewController.swift */,
 				9EEF2A5B21B5D76A0027B5EF /* Main.storyboard */,
 				76CB699D21A33D8A00D5208E /* Assets.xcassets */,
 				76CB699F21A33D8A00D5208E /* LaunchScreen.storyboard */,
@@ -157,6 +156,26 @@
 				76CB699A21A33D8A00D5208E /* Diary.xcdatamodeld */,
 			);
 			path = Diary;
+			sourceTree = "<group>";
+		};
+		9E66DA4421D026040084BF17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				767385AC21B5F23A00BBA2FC /* RootViewController.swift */,
+				76CB699521A33D8A00D5208E /* ViewController.swift */,
+				7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */,
+				76CB69AC21A35C2E00D5208E /* CreationViewController.swift */,
+				7605F91B21B2E62800709DB4 /* SettingsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9E66DA4521D0262C0084BF17 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9E66DA4621D026450084BF17 /* SettingsController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		9EEF2A5521B5A1E40027B5EF /* CoreData */ = {
@@ -316,6 +335,7 @@
 				7605F93021B32C1800709DB4 /* DarkTheme.swift in Sources */,
 				767385AD21B5F23A00BBA2FC /* RootViewController.swift in Sources */,
 				76CB699621A33D8A00D5208E /* ViewController.swift in Sources */,
+				9E66DA4721D026450084BF17 /* SettingsController.swift in Sources */,
 				7605F92A21B3298200709DB4 /* ThemeProtocol.swift in Sources */,
 				9EEF2A5721B5A2070027B5EF /* CoreDataStack.swift in Sources */,
 				7601A0AC21A4B60000DBF9F0 /* EditingNoteViewController.swift in Sources */,

@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var themeSwitch: UISwitch!
     @IBOutlet weak var viewSwitch: UISwitch!
+    let controller = settingsController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func themeChanged(_ sender: UISwitch) {
-        Settings.currentTheme = sender.isOn ? LightTheme() : DarkTheme()
-        
-        UserDefaults.standard.set(sender.isOn, forKey: "LightTheme")
+        controller.changeTheme(state: sender.isOn)
         applyTheme()
     }
     
@@ -36,9 +35,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func viewChanger(_ sender: UISwitch) {
-        Settings.isCollectionView = sender.isOn
-        
-        UserDefaults.standard.set(sender.isOn, forKey: "CollectionView")
+        controller.changeTheme(state: sender.isOn);
     }
 }
 
