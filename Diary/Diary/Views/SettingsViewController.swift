@@ -35,6 +35,11 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func viewChanger(_ sender: UISwitch) {
-        controller.changeTheme(state: sender.isOn);
+        controller.changeView(state: sender.isOn);
     }
+}
+
+class Settings {
+    static var currentTheme: ThemeProtocol = LightTheme()
+    static var isCollectionView = false
 }

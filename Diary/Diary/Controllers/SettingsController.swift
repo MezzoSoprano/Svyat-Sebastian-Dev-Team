@@ -24,8 +24,3 @@ class settingsController {
         UserDefaults.standard.set(state, forKey: "CollectionView")
     }
 }
-
-class Settings {
-    static var currentTheme: ThemeProtocol = LightTheme()
-    static var isCollectionView = false
-}
