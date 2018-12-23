@@ -38,8 +38,3 @@ class SettingsViewController: UIViewController {
         controller.changeTheme(state: sender.isOn);
     }
 }
-
-class Settings {
-    static var currentTheme: ThemeProtocol = LightTheme()
-    static var isCollectionView = false
-}

@@ -8,6 +8,11 @@
 
 import UIKit
 
+//protocol settingsDelegate {
+//    func changeTheme(state: Bool)
+//    func changeContainer(state: Bool)
+//}
+
 class settingsController {
     func changeTheme(state: Bool) {
         Settings.currentTheme = state ? LightTheme() : DarkTheme()
@@ -18,4 +23,9 @@ class settingsController {
         Settings.isCollectionView = state
         UserDefaults.standard.set(state, forKey: "CollectionView")
     }
+}
+
+class Settings {
+    static var currentTheme: ThemeProtocol = LightTheme()
+    static var isCollectionView = false
 }
