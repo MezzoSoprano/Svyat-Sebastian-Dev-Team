@@ -9,25 +9,21 @@
 import UIKit
 import CoreData
 
-var list: [DiaryNote] = []
-let coreData = CoreDataStack()
-
-var selectedItemIndex: Int?
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var tableView = UITableView()
     var tableViewConstraints: [NSLayoutConstraint] = []
     let tableCellID = "CellID"
-    var collectionView = UICollectionView(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: UICollectionViewLayout.init()) //sorry
+    var collectionView = UICollectionView(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: UICollectionViewLayout.init())
     let collectionCellID = "CCellID"
     let segueIdentifierPassingData = "segueForPassingData"
     let segueIdentifierCreatingNote = "segurForCreatingNote"
     let segueIdentifierSettings = "settingsSegue"
+    let controller = MainViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        coreData.load() //C
+        coreData.load()
         self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
     }
     
@@ -143,8 +139,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { //C
         if editingStyle == .delete {
             print("Note was deleted: \(list[indexPath.row].name ?? "couldn't get note")")
-            coreData.delete(at: indexPath.row)
-            list.remove(at: indexPath.row)
+            controller.deleteAt(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
