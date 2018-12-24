@@ -29,7 +29,7 @@ class RootViewController: UIViewController {
     //password: password
     @IBAction func SignIn(_ sender: Any) {
         if (controller.logIn(username: logintTF.text!, password: passwordTF.text!)) {
-            performSegue(withIdentifier: "segueToStarterView", sender: nil)
+            performSegue(withIdentifier: "segueToTutorial", sender: nil)
         }
         else if (logintTF.text == "" || passwordTF.text == "") {
             createAlert(title: "ERROR", message: "Please enter password and login")

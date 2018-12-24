@@ -27,6 +27,7 @@
 		76CB69AD21A35C2E00D5208E /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB69AC21A35C2E00D5208E /* CreationViewController.swift */; };
 		8C95A4AB86233F62B1C16684 /* Pods_Diary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B261C4718A596040287E54B2 /* Pods_Diary.framework */; };
 		9E3853D821B4427000269923 /* CollectionViewCell-Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3853D721B4427000269923 /* CollectionViewCell-Layout.swift */; };
+		9E4DF6C121D11DCD00E28B7C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4DF6C021D11DCD00E28B7C /* PageViewController.swift */; };
 		9E66DA4721D026450084BF17 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66DA4621D026450084BF17 /* SettingsController.swift */; };
 		9E66DA4921D045E40084BF17 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66DA4821D045E40084BF17 /* MainViewController.swift */; };
 		9E66DA4B21D0CA860084BF17 /* CreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E66DA4A21D0CA860084BF17 /* CreationController.swift */; };
@@ -60,6 +61,7 @@
 		76CB69AC21A35C2E00D5208E /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 		853D215392FB53DD841FF026 /* Pods-Diary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diary/Pods-Diary.release.xcconfig"; sourceTree = "<group>"; };
 		9E3853D721B4427000269923 /* CollectionViewCell-Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell-Layout.swift"; sourceTree = "<group>"; };
+		9E4DF6C021D11DCD00E28B7C /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		9E66DA4621D026450084BF17 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		9E66DA4821D045E40084BF17 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9E66DA4A21D0CA860084BF17 /* CreationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */,
 				76CB69AC21A35C2E00D5208E /* CreationViewController.swift */,
 				7605F91B21B2E62800709DB4 /* SettingsViewController.swift */,
+				9E4DF6C021D11DCD00E28B7C /* PageViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				9E66DA4F21D0DF790084BF17 /* RootController.swift in Sources */,
 				7605F92321B2F95000709DB4 /* DiaryNote.swift in Sources */,
 				760EBE0221AB3AFE0095EF42 /* TableViewCell.swift in Sources */,
+				9E4DF6C121D11DCD00E28B7C /* PageViewController.swift in Sources */,
 				7605F93021B32C1800709DB4 /* DarkTheme.swift in Sources */,
 				767385AD21B5F23A00BBA2FC /* RootViewController.swift in Sources */,
 				76CB699621A33D8A00D5208E /* ViewController.swift in Sources */,

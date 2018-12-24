@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dG6-6d-Ikr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dG6-6d-Ikr">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="-564"/>
+            <point key="canvasLocation" x="1034" y="-565"/>
         </scene>
         <!--CREATING NOTE-->
         <scene sceneID="1yM-dl-eMv">
@@ -325,6 +325,123 @@
             </objects>
             <point key="canvasLocation" x="1102" y="178"/>
         </scene>
+        <!--Page 1-->
+        <scene sceneID="7ZO-DW-gxM">
+            <objects>
+                <viewController restorationIdentifier="page1" storyboardIdentifier="page1" title="Page 1" id="aN2-7q-ZKw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m0I-gC-Wrj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3p3-2U-0vz">
+                                <rect key="frame" x="43" y="69" width="288" height="84"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="UQs-fp-rYg"/>
+                                </constraints>
+                                <string key="text">Store your daily stories in this app
+
+Add new note by taping on add sign ("+").</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial" translatesAutoresizingMaskIntoConstraints="NO" id="TSM-zw-Jvf">
+                                <rect key="frame" x="43" y="213" width="288" height="545"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99997597932815552" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="3p3-2U-0vz" firstAttribute="top" secondItem="3kU-wF-wnY" secondAttribute="top" constant="25" id="1wp-WH-IeQ"/>
+                            <constraint firstItem="3p3-2U-0vz" firstAttribute="leading" secondItem="3kU-wF-wnY" secondAttribute="leading" constant="43" id="BlY-kC-wal"/>
+                            <constraint firstItem="TSM-zw-Jvf" firstAttribute="leading" secondItem="3kU-wF-wnY" secondAttribute="leading" constant="43" id="GVH-g5-Y5h"/>
+                            <constraint firstItem="3kU-wF-wnY" firstAttribute="trailing" secondItem="TSM-zw-Jvf" secondAttribute="trailing" constant="44" id="Jrc-pe-0HH"/>
+                            <constraint firstItem="3kU-wF-wnY" firstAttribute="trailing" secondItem="3p3-2U-0vz" secondAttribute="trailing" constant="44" id="KhP-GQ-JBT"/>
+                            <constraint firstItem="TSM-zw-Jvf" firstAttribute="top" secondItem="3p3-2U-0vz" secondAttribute="bottom" constant="60" id="PZh-Ff-KQ2"/>
+                            <constraint firstItem="3kU-wF-wnY" firstAttribute="bottom" secondItem="TSM-zw-Jvf" secondAttribute="bottom" constant="20" id="VLk-wD-rUr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3kU-wF-wnY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pui-wt-Ura" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007.2" y="-1269.4581280788177"/>
+        </scene>
+        <!--Page 2-->
+        <scene sceneID="TTh-6Y-N5Y">
+            <objects>
+                <viewController restorationIdentifier="page2" storyboardIdentifier="page2" title="Page 2" id="g5e-RZ-LlS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QfR-c1-22K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tutorial2" translatesAutoresizingMaskIntoConstraints="NO" id="h35-wy-3YB">
+                                <rect key="frame" x="43" y="222" width="288" height="536"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ci7-xC-cdo">
+                                <rect key="frame" x="43" y="69" width="288" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="mXu-hC-xu0"/>
+                                </constraints>
+                                <string key="text">Tap on a cell to edit or delete your story.
+
+Access settings where you can alternate between Table and Collection views or change your Theme to dark.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99997597932815552" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="h35-wy-3YB" firstAttribute="leading" secondItem="JlM-ox-DV0" secondAttribute="leading" constant="43" id="0R1-Vw-mSB"/>
+                            <constraint firstItem="h35-wy-3YB" firstAttribute="top" secondItem="ci7-xC-cdo" secondAttribute="bottom" constant="33" id="Fxl-Zd-pKS"/>
+                            <constraint firstItem="JlM-ox-DV0" firstAttribute="bottom" secondItem="h35-wy-3YB" secondAttribute="bottom" constant="20" id="KNe-Yl-ter"/>
+                            <constraint firstItem="JlM-ox-DV0" firstAttribute="trailing" secondItem="h35-wy-3YB" secondAttribute="trailing" constant="44" id="Y1O-wX-cdl"/>
+                            <constraint firstItem="JlM-ox-DV0" firstAttribute="trailing" secondItem="ci7-xC-cdo" secondAttribute="trailing" constant="44" id="ixY-Aa-gx5"/>
+                            <constraint firstItem="ci7-xC-cdo" firstAttribute="leading" secondItem="JlM-ox-DV0" secondAttribute="leading" constant="43" id="jue-ae-HL7"/>
+                            <constraint firstItem="ci7-xC-cdo" firstAttribute="top" secondItem="JlM-ox-DV0" secondAttribute="top" constant="25" id="vi0-w7-sJd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JlM-ox-DV0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jqN-Ja-KDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-332" y="-1269.4581280788177"/>
+        </scene>
+        <!--Page 3-->
+        <scene sceneID="jwp-Te-TRx">
+            <objects>
+                <viewController restorationIdentifier="page3" storyboardIdentifier="page3" title="Page 3" id="geO-7G-eGQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iJy-EC-JgQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6be-1o-ADT">
+                                <rect key="frame" x="170" y="390" width="36" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                                <state key="normal" title="Yes!">
+                                    <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="dNS-iL-1jR" kind="show" id="Sc9-kT-sQs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ready to take notes?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se0-2W-4jz">
+                                <rect key="frame" x="107" y="359" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.99997597932815552" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="8Ot-zQ-Ar2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A5R-1n-C9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352.80000000000001" y="-1269.4581280788177"/>
+        </scene>
         <!--Root View Controller-->
         <scene sceneID="Str-1E-r7t">
             <objects>
@@ -405,17 +522,29 @@
                         <outlet property="SignUpOutlet" destination="c27-an-Bbh" id="gvD-gl-4MQ"/>
                         <outlet property="logintTF" destination="eaJ-Rw-hYK" id="1ev-Mx-Z6t"/>
                         <outlet property="passwordTF" destination="nOd-yI-TYn" id="RSj-9m-MHK"/>
-                        <segue destination="dNS-iL-1jR" kind="show" identifier="segueToStarterView" id="t3W-rN-Y32"/>
+                        <segue destination="M0n-sI-gIb" kind="show" identifier="segueToTutorial" id="TTA-3D-5Gm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7g-Fj-j6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-465" y="-564"/>
+            <point key="canvasLocation" x="-1007" y="-565"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="2UV-Xf-nlK">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="M0n-sI-gIb" customClass="PageViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="dNS-iL-1jR" kind="show" identifier="segueToStarterView" id="ZpA-L4-XIl"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QiH-6a-xx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-332" y="-565"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4jT-cQ-99r">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dNS-iL-1jR" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="dNS-iL-1jR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lfA-5Q-mS2">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -428,8 +557,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BW-eE-xm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357.60000000000002" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="353" y="-565"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tutorial" width="559" height="981"/>
+        <image name="Tutorial2" width="559" height="981"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Sc9-kT-sQs"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>
