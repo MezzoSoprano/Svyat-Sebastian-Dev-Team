@@ -15,6 +15,7 @@ class RootViewController: UIViewController {
     @IBOutlet weak var SignUpOutlet: UIButton!
     @IBOutlet weak var logintTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    let controller = RootController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +28,7 @@ class RootViewController: UIViewController {
     //login: login
     //password: password
     @IBAction func SignIn(_ sender: Any) {
-        let dictionary = Locksmith.loadDataForUserAccount(userAccount: "myAccount")
-        
-        if (logintTF.text == dictionary?["login"] as? String  && passwordTF.text == (dictionary?["password"] as! String)) {
+        if (controller.logIn(username: logintTF.text!, password: passwordTF.text!)) {
             performSegue(withIdentifier: "segueToStarterView", sender: nil)
         }
         else if (logintTF.text == "" || passwordTF.text == "") {
@@ -42,13 +41,14 @@ class RootViewController: UIViewController {
     
     @IBAction func SignUp(_ sender: Any) {
         //performSegue(withIdentifier: "segueToStarterView", sender: nil)
-        if let login = logintTF.text, let password = passwordTF.text {
-            do {
-                try Locksmith.saveData(data: ["login" : login, "password" : password], forUserAccount: "myAccount")
-            } catch {
-                print("unable to save data")
-                createAlert(title: "ERROR", message: "Already exists")
-            }
+        if (logintTF.text == "" || passwordTF.text == "") {
+            createAlert(title: "ERROR", message: "Please enter password and login")
+        }
+        else if (controller.signUp(username: logintTF.text!, password: passwordTF.text!)) {
+            return
+        }
+        else {
+            createAlert(title: "ERROR", message: "Already exists")
         }
     }
     

@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        coreData.load()
+        coreData.load() //C
         self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
     }
     
@@ -75,10 +75,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if(Settings.isCollectionView == true)
         {
             tableView.removeFromSuperview()
-            collectionView.reloadData()
+            collectionView.reloadData() //C should maybe be involved
         } else {
             collectionView.removeFromSuperview()
-            tableView.reloadData()
+            tableView.reloadData() //
         }
         
     }
@@ -103,7 +103,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return list.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { //C
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellID, for: indexPath) as! customCollectionCell
         myCell.nameLabel.text = list[indexPath.row].name
         myCell.textLabel.text = list[indexPath.row].text
@@ -117,7 +117,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedItemIndex = indexPath.row
-        self.performSegue(withIdentifier: segueIdentifierPassingData, sender: nil)
+        self.performSegue(withIdentifier: segueIdentifierPassingData, sender: nil) //C maybe
     }
     /////////////////////////////////
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -140,7 +140,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.performSegue(withIdentifier: segueIdentifierPassingData, sender: nil)
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) { //C
         if editingStyle == .delete {
             print("Note was deleted: \(list[indexPath.row].name ?? "couldn't get note")")
             coreData.delete(at: indexPath.row)
@@ -149,7 +149,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { //C
         let cell = tableView.dequeueReusableCell(withIdentifier: tableCellID, for: indexPath) as! tableCell
         cell.nameLabel.text = list[indexPath.row].name
         cell.textView.text = list[indexPath.row].text
@@ -167,11 +167,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func createNewNote(_ sender: Any) {
-        performSegue(withIdentifier: segueIdentifierCreatingNote, sender: nil)
+        performSegue(withIdentifier: segueIdentifierCreatingNote, sender: nil) //C
     }
     
     @IBAction func openSettings(_ sender: Any) {
-        performSegue(withIdentifier: segueIdentifierSettings, sender: nil)
+        performSegue(withIdentifier: segueIdentifierSettings, sender: nil) //C
     }
 }
 

@@ -18,7 +18,7 @@ class EditingNoteViewController: UIViewController, UIGestureRecognizerDelegate, 
     @IBOutlet weak var deleteOutlet: UIButton!
     @IBOutlet weak var editingPicture: UIImageView!
     
-    let coreData = CoreDataStack()
+    let controller = EditingController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,29 +50,17 @@ class EditingNoteViewController: UIViewController, UIGestureRecognizerDelegate, 
     }
     
     @IBAction func deleteAction(_ sender: Any) {
-        guard let recivedIndex = recivedItemIndex else {
-            print("Couldnt get index")
-            return
-        }
-        list.remove(at: recivedIndex)
-        
-        if editingName.text != "" && editingName.text != "" {
-            coreData.delete()
-        }
-        _ = navigationController?.popViewController(animated: true)
-        
+        controller.deleteFromList()
+        _ = navigationController?.popViewController(animated: true) //
     }
     
     @IBAction func saveEditingNote(_ sender: Any) {
-        guard let recivedIndex = recivedItemIndex else {
-            print("Couldnt get index")
+        if editingName.text != "" && editingText.text != "" {
+            controller.modNote(note: DiaryNote(name: editingName.text, text: editingText.text, image: editingPicture.image))
+        }
+        else {
             return
         }
-        coreData.edit(name: editingName.text!, text: editingText.text!, image: editingPicture.image)
-        
-        list[recivedIndex].name = editingName.text
-        list[recivedIndex].text = editingText.text
-        list[recivedIndex].image = editingPicture.image
     }
     
     @IBAction func imageTapped(_ sender: Any) {

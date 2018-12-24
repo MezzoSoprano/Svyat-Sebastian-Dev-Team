@@ -17,6 +17,7 @@ class CreationViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var importImageOutlet: UIButton!
     
     let coreData = CoreDataStack()
+    let controller = CreationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,7 @@ class CreationViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func addButton(_ sender: Any) {
         if inputName.text != "" && inputText.text != "" {
-            coreData.add(name: inputName.text!, text: inputText.text!, image: inputImage.image)
-            list.append(DiaryNote(name: inputName.text, text: inputText.text, image: inputImage.image))
+            controller.addToList(note: DiaryNote(name: inputName.text, text: inputText.text, image: inputImage.image))
             inputText.text = ""
             inputName.text = ""
             inputImage.image = nil
