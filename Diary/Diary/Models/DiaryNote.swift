@@ -90,13 +90,3 @@ class DiaryNote: NSObject, NSCoding {
         return str1 + str2
     }
 }
-
-class user {
-    var email: String
-    var notes: [DiaryNote?]
-    
-    init (email: String, notes: [DiaryNote?]) {
-        self.email = email
-        self.notes = notes
-    }
-}
