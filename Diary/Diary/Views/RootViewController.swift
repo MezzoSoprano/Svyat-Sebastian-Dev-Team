@@ -24,12 +24,33 @@ class RootViewController: UIViewController {
         //SignUpOutlet.layer.cornerRadius = 3
     }
     
+    @objc func successAction() {
+        performSegue(withIdentifier: "segueToMain", sender: nil)
+    }
+    
+    func animation() {
+        let newSize: CGSize = CGSize(width: 350, height: 350)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.SignInUotlet.bounds.size = newSize
+            self.SignInUotlet.backgroundColor = .white
+            //self.SignInUotlet.layer.cornerRadius = 0
+        }) { (isFinished) in
+            let successfulBtn = self.SignInUotlet
+            //self.SignInUotlet.removeFromSuperview()
+            successfulBtn?.setTitle("Login Successful", for: UIControl.State.normal)
+            successfulBtn?.addTarget(self, action: #selector(self.successAction), for: UIControl.Event.touchUpInside)
+            
+        }
+            //, completion: {(finished:Bool) in
+    }
+    
     //!!!
     //login: login
     //password: password
     @IBAction func SignIn(_ sender: Any) {
         if (controller.logIn(username: logintTF.text!, password: passwordTF.text!)) {
-            performSegue(withIdentifier: "segueToMain", sender: nil)
+            animation()
         }
         else if (logintTF.text == "" || passwordTF.text == "") {
             createAlert(title: "ERROR", message: "Please enter password and login")
