@@ -20,8 +20,8 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SignInUotlet.layer.cornerRadius = 3
-        SignUpOutlet.layer.cornerRadius = 3
+        SignInUotlet.layer.cornerRadius = 5
+        //SignUpOutlet.layer.cornerRadius = 3
     }
     
     //!!!
@@ -29,7 +29,7 @@ class RootViewController: UIViewController {
     //password: password
     @IBAction func SignIn(_ sender: Any) {
         if (controller.logIn(username: logintTF.text!, password: passwordTF.text!)) {
-            performSegue(withIdentifier: "segueToTutorial", sender: nil)
+            performSegue(withIdentifier: "segueToMain", sender: nil)
         }
         else if (logintTF.text == "" || passwordTF.text == "") {
             createAlert(title: "ERROR", message: "Please enter password and login")
@@ -40,16 +40,7 @@ class RootViewController: UIViewController {
     }
     
     @IBAction func SignUp(_ sender: Any) {
-        //performSegue(withIdentifier: "segueToStarterView", sender: nil)
-        if (logintTF.text == "" || passwordTF.text == "") {
-            createAlert(title: "ERROR", message: "Please enter password and login")
-        }
-        else if (controller.signUp(username: logintTF.text!, password: passwordTF.text!)) {
-            return
-        }
-        else {
-            createAlert(title: "ERROR", message: "Already exists")
-        }
+        performSegue(withIdentifier: "segueToSignUp", sender: nil)
     }
     
     func createAlert(title: String, message: String) {

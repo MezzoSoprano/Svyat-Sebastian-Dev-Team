@@ -445,7 +445,7 @@ Access settings where you can alternate between Table and Collection views or ch
         <!--Root View Controller-->
         <scene sceneID="Str-1E-r7t">
             <objects>
-                <viewController id="dG6-6d-Ikr" customClass="RootViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dG6-6d-Ikr" customClass="RootViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PEW-S4-P1b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -463,7 +463,7 @@ Access settings where you can alternate between Table and Collection views or ch
                                         <rect key="frame" x="0.0" y="59.000000000000028" width="200" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -478,7 +478,7 @@ Access settings where you can alternate between Table and Collection views or ch
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dNx-9a-bHK">
-                                <rect key="frame" x="152.66666666666666" y="302.66666666666669" width="70" height="68"/>
+                                <rect key="frame" x="152.66666666666666" y="312.66666666666669" width="70" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTA-Vx-epl">
                                         <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
@@ -486,31 +486,33 @@ Access settings where you can alternate between Table and Collection views or ch
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="TiS-u2-yNx"/>
                                         </constraints>
-                                        <state key="normal" title="Sign in">
+                                        <state key="normal" title="Proceed">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="SignIn:" destination="dG6-6d-Ikr" eventType="touchUpInside" id="AxT-Tb-kFW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c27-an-Bbh">
-                                        <rect key="frame" x="0.0" y="38" width="70" height="30"/>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Sign up">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="SignUp:" destination="dG6-6d-Ikr" eventType="touchUpInside" id="2ut-It-99S"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c27-an-Bbh">
+                                <rect key="frame" x="152" y="748" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="SignUp:" destination="dG6-6d-Ikr" eventType="touchUpInside" id="2ut-It-99S"/>
+                                    <segue destination="gnw-Za-oDp" kind="show" identifier="segueToSignUp" id="B1I-G6-Qav"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oTn-xq-OPz" firstAttribute="centerX" secondItem="7AJ-OI-qjg" secondAttribute="centerX" id="71R-z7-4Wu"/>
                             <constraint firstItem="oTn-xq-OPz" firstAttribute="top" secondItem="7AJ-OI-qjg" secondAttribute="top" constant="80" id="EMG-jz-a1y"/>
-                            <constraint firstItem="dNx-9a-bHK" firstAttribute="top" secondItem="tld-52-HRQ" secondAttribute="bottom" constant="15" id="EcR-jY-eJT"/>
+                            <constraint firstItem="dNx-9a-bHK" firstAttribute="top" secondItem="tld-52-HRQ" secondAttribute="bottom" constant="25" id="EcR-jY-eJT"/>
                             <constraint firstItem="dNx-9a-bHK" firstAttribute="centerX" secondItem="7AJ-OI-qjg" secondAttribute="centerX" id="Hmx-EX-pFm"/>
                             <constraint firstItem="tld-52-HRQ" firstAttribute="centerX" secondItem="7AJ-OI-qjg" secondAttribute="centerX" id="N8v-1K-rzk"/>
                             <constraint firstItem="tld-52-HRQ" firstAttribute="top" secondItem="oTn-xq-OPz" secondAttribute="bottom" constant="20" id="uRY-Qj-NlD"/>
@@ -522,17 +524,151 @@ Access settings where you can alternate between Table and Collection views or ch
                         <outlet property="SignUpOutlet" destination="c27-an-Bbh" id="gvD-gl-4MQ"/>
                         <outlet property="logintTF" destination="eaJ-Rw-hYK" id="1ev-Mx-Z6t"/>
                         <outlet property="passwordTF" destination="nOd-yI-TYn" id="RSj-9m-MHK"/>
-                        <segue destination="M0n-sI-gIb" kind="show" identifier="segueToTutorial" id="TTA-3D-5Gm"/>
+                        <segue destination="dNS-iL-1jR" kind="show" identifier="segueToMain" id="wk5-Lo-cBT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7g-Fj-j6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1007" y="-565"/>
         </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="Gdb-Zw-aMY">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g4b-mA-sqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="oMp-gh-xym" customClass="SignUpViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CiZ-3l-swh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiU-8Q-31X">
+                                <rect key="frame" x="116" y="121.00000000000001" width="143" height="54.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="enl-DL-NZt">
+                                <rect key="frame" x="87" y="195.66666666666663" width="201" height="345"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aEr-xR-3Ps">
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2l-yV-81s">
+                                        <rect key="frame" x="0.0" y="63.000000000000028" width="201" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHT-UV-22E">
+                                        <rect key="frame" x="0.0" y="126.00000000000003" width="201" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cvi-p5-Qrl">
+                                        <rect key="frame" x="0.0" y="189.00000000000003" width="201" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K00-Dp-lsx">
+                                        <rect key="frame" x="0.0" y="252" width="201" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBl-3C-tQt">
+                                        <rect key="frame" x="0.0" y="315" width="201" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="X3L-mZ-ZZu">
+                                <rect key="frame" x="95" y="575.66666666666663" width="185" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZn-EK-d2g">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="AoI-bb-xe9"/>
+                                        </constraints>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Back:" destination="oMp-gh-xym" eventType="touchUpInside" id="z5W-Dl-WLN"/>
+                                            <action selector="SignIn:" destination="dG6-6d-Ikr" eventType="touchUpInside" id="CNb-6J-D3W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynW-1E-c30">
+                                        <rect key="frame" x="115" y="0.0" width="70" height="30"/>
+                                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="b1T-Pm-LRS"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SignIn:" destination="dG6-6d-Ikr" eventType="touchUpInside" id="znn-QT-gDv"/>
+                                            <action selector="SignUp:" destination="oMp-gh-xym" eventType="touchUpInside" id="PKS-ES-X5Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="enl-DL-NZt" firstAttribute="top" secondItem="wiU-8Q-31X" secondAttribute="bottom" constant="20" id="0Yl-jd-PJh"/>
+                            <constraint firstItem="wiU-8Q-31X" firstAttribute="leading" secondItem="I1P-cl-nde" secondAttribute="leading" constant="116" id="8Oj-fe-FxO"/>
+                            <constraint firstItem="wiU-8Q-31X" firstAttribute="centerX" secondItem="CiZ-3l-swh" secondAttribute="centerX" id="9VD-y7-LiG"/>
+                            <constraint firstItem="X3L-mZ-ZZu" firstAttribute="top" secondItem="enl-DL-NZt" secondAttribute="bottom" constant="35" id="BQt-ne-DJF"/>
+                            <constraint firstItem="enl-DL-NZt" firstAttribute="centerX" secondItem="wiU-8Q-31X" secondAttribute="centerX" id="Siu-A3-fPS"/>
+                            <constraint firstItem="enl-DL-NZt" firstAttribute="leading" secondItem="I1P-cl-nde" secondAttribute="leading" constant="87" id="Ysn-Kn-9RK"/>
+                            <constraint firstItem="X3L-mZ-ZZu" firstAttribute="centerX" secondItem="enl-DL-NZt" secondAttribute="centerX" id="aSx-VC-0jp"/>
+                            <constraint firstItem="wiU-8Q-31X" firstAttribute="top" secondItem="I1P-cl-nde" secondAttribute="top" constant="77" id="kFI-D6-JHU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I1P-cl-nde"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7dG-M4-2fd"/>
+                    <connections>
+                        <outlet property="ageTFOutlet" destination="ZHT-UV-22E" id="bcg-dx-ThM"/>
+                        <outlet property="backBtn" destination="lZn-EK-d2g" id="5Mt-f2-Szv"/>
+                        <outlet property="emailTFOutlet" destination="Cvi-p5-Qrl" id="TTo-Fw-4YY"/>
+                        <outlet property="genderPickerOutlet" destination="LBl-3C-tQt" id="hCm-yf-ab2"/>
+                        <outlet property="lastNameOutlet" destination="G2l-yV-81s" id="yvk-Vi-EqZ"/>
+                        <outlet property="nameTFOutlet" destination="aEr-xR-3Ps" id="ScA-C0-jpb"/>
+                        <outlet property="passwordTFOutlet" destination="K00-Dp-lsx" id="qrH-sc-G76"/>
+                        <outlet property="signUpBtn" destination="ynW-1E-c30" id="EL0-EW-5Oc"/>
+                        <segue destination="M0n-sI-gIb" kind="show" identifier="segueToTutorial" id="kY5-qo-xvR"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-332" y="177"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YMs-c5-gKe">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="gnw-Za-oDp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bu2-cl-fFN">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oMp-gh-xym" kind="relationship" relationship="rootViewController" id="tyC-Ok-tfd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xHy-S6-tEY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007" y="177"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="2UV-Xf-nlK">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="M0n-sI-gIb" customClass="PageViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="PV" autoresizesArchivedViewToFullSize="NO" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="M0n-sI-gIb" customClass="PageViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="dNS-iL-1jR" kind="show" identifier="segueToStarterView" id="ZpA-L4-XIl"/>
                     </connections>
@@ -565,7 +701,7 @@ Access settings where you can alternate between Table and Collection views or ch
         <image name="Tutorial2" width="559" height="981"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Sc9-kT-sQs"/>
+        <segue reference="wk5-Lo-cBT"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>

@@ -19,13 +19,4 @@ class RootController {
             return false
         }
     }
-    func signUp(username: String, password: String) -> Bool {
-        do {
-            try Locksmith.saveData(data: ["login" : username, "password" : password], forUserAccount: "myAccount")
-            return true
-        } catch {
-            print("unable to save data")
-            return false
-        }
-    }
 }
