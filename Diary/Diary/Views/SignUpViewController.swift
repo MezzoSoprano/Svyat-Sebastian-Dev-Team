@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var signUpBtn: UIButton!
     
-    let genders = [ "Male", "Female", "Other"]
+    let genders = [ "", "Male", "Female", "Other"]
     var pickedGender: String?
     let controller = SignUpController()
     
@@ -29,6 +29,7 @@ class SignUpViewController: UIViewController {
         signUpBtn.layer.cornerRadius = 5
         setupGenderPicker()
         setUpToolbar()
+        
     }
     
     func setupGenderPicker() {
@@ -58,7 +59,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func SignUp(_ sender: Any) {
-        if (nameTFOutlet.text != "" || lastNameOutlet.text != "" || ageTFOutlet.text != "" || emailTFOutlet.text != "" || passwordTFOutlet.text != "") {
+        if (nameTFOutlet.text != "" && lastNameOutlet.text != "" && ageTFOutlet.text != "" && emailTFOutlet.text != "" && passwordTFOutlet.text != "" && genderPickerOutlet.text != "") {
             if (controller.signUp(name: nameTFOutlet.text!, lastName: lastNameOutlet.text!, age: Int(ageTFOutlet.text!)!, email: emailTFOutlet.text!, password: passwordTFOutlet.text!, gender: genderPickerOutlet.text!)) {
                 
                 performSegue(withIdentifier: "segueToTutorial", sender: nil)
