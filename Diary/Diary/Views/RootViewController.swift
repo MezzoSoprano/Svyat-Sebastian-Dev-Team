@@ -33,7 +33,13 @@ class RootViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5, animations: {
             self.SignInUotlet.bounds.size = newSize
-            self.SignInUotlet.backgroundColor = .white
+            self.SignInUotlet.backgroundColor = .lightGray
+            self.SignInUotlet.layer.shadowColor = UIColor.black.cgColor
+            self.SignInUotlet.layer.shadowOffset = CGSize(width: 0, height: 0)
+            self.SignInUotlet.layer.shadowOpacity = 2
+            self.SignInUotlet.layer.shadowRadius = 2.0
+            self.SignInUotlet.layer.masksToBounds = false
+            self.SignInUotlet.layer.cornerRadius = 3
             //self.SignInUotlet.layer.cornerRadius = 0
         }) { (isFinished) in
             let successfulBtn = self.SignInUotlet
