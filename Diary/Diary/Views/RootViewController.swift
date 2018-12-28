@@ -29,10 +29,9 @@ class RootViewController: UIViewController {
     }
     
     func animation() {
-        let newSize: CGSize = CGSize(width: 350, height: 350)
         
         UIView.animate(withDuration: 0.5, animations: {
-            self.SignInUotlet.bounds.size = newSize
+            self.SignInUotlet.transform = CGAffineTransform(scaleX: 2, y: 2)
             self.SignInUotlet.backgroundColor = .lightGray
             self.SignInUotlet.layer.shadowColor = UIColor.black.cgColor
             self.SignInUotlet.layer.shadowOffset = CGSize(width: 0, height: 0)
@@ -40,20 +39,19 @@ class RootViewController: UIViewController {
             self.SignInUotlet.layer.shadowRadius = 2.0
             self.SignInUotlet.layer.masksToBounds = false
             self.SignInUotlet.layer.cornerRadius = 3
-            //self.SignInUotlet.layer.cornerRadius = 0
+
         }) { (isFinished) in
             let successfulBtn = self.SignInUotlet
             //self.SignInUotlet.removeFromSuperview()
-            successfulBtn?.setTitle("Login Successful", for: UIControl.State.normal)
+            //successfulBtn?.transform = CGAffineTransform.identity
+            successfulBtn?.setTitle("Success!", for: UIControl.State.normal)
             successfulBtn?.addTarget(self, action: #selector(self.successAction), for: UIControl.Event.touchUpInside)
             
         }
             //, completion: {(finished:Bool) in
     }
     
-    //!!!
-    //login: login
-    //password: password
+
     @IBAction func SignIn(_ sender: Any) {
         if (controller.logIn(username: logintTF.text!, password: passwordTF.text!)) {
             animation()

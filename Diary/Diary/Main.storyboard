@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dG6-6d-Ikr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dG6-6d-Ikr">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -323,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5rA-jz-8is" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102" y="178"/>
+            <point key="canvasLocation" x="1033" y="177"/>
         </scene>
         <!--Page 1-->
         <scene sceneID="7ZO-DW-gxM">
@@ -534,7 +534,6 @@ Access settings where you can alternate between Table and Collection views or ch
         <!--Sign Up View Controller-->
         <scene sceneID="Gdb-Zw-aMY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g4b-mA-sqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="oMp-gh-xym" customClass="SignUpViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CiZ-3l-swh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -647,6 +646,7 @@ Access settings where you can alternate between Table and Collection views or ch
                         <segue destination="M0n-sI-gIb" kind="show" identifier="segueToTutorial" id="kY5-qo-xvR"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g4b-mA-sqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-332" y="177"/>
         </scene>
