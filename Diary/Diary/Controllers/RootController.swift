@@ -11,7 +11,7 @@ import Locksmith
 
 class RootController {
     func logIn(username: String, password: String) -> Bool {
-        let dictionary = Locksmith.loadDataForUserAccount(userAccount: "myAccount")
+        let dictionary = Locksmith.loadDataForUserAccount(userAccount: username)
         if (username == dictionary?["login"] as? String  && password == (dictionary?["password"] as! String)) {
             return true
         }

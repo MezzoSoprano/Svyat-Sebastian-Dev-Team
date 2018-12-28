@@ -13,7 +13,7 @@ class SignUpController {
     
     func signUp(name: String, lastName: String, age: Int, email: String, password: String, gender: String) -> Bool {
         do {
-            try Locksmith.saveData(data: ["login" : email, "password" : password], forUserAccount: "myAccount")
+            try Locksmith.saveData(data: ["login" : email, "password" : password], forUserAccount: name)
             return true
         }
         catch {
