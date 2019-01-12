@@ -10,7 +10,8 @@ import UIKit
 
 class customCollectionCell: UICollectionViewCell {
     
-     var link: MainViewController?
+    var mainLink: MainViewController?
+    var favoriteLink: FavoriteViewController?
     
     let cellView: UIView = {
         let view = UIView()
@@ -66,7 +67,8 @@ class customCollectionCell: UICollectionViewCell {
     
     @objc func like(sender: customCollectionCell)
     {
-        link?.addToFavorite(cell: self)
+        mainLink?.addToFavorite(cell: self)
+        favoriteLink?.removeFromFavorite(cell: self)
     }
     
     func setup() {

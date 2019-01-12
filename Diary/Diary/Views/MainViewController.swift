@@ -111,7 +111,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         myCell.nameLabel.text = list[indexPath.row].name
         myCell.textLabel.text = list[indexPath.row].text
         myCell.pictureImageView.image = list[indexPath.row].image
-        myCell.link = self
+        myCell.mainLink = self
         return myCell
     }
 
@@ -157,13 +157,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             if (list[indexPath.row].favorite == false) {
             list[indexPath.row].favorite = true
             favoriteList.append(list[indexPath.row])
-            print("Note was liked: \(favoriteList[indexPath.row].name ?? "couldn't get note name ")")
+            print("Note was liked: \(list[indexPath.row].name ?? "couldn't get note name ")")
         }
             else {
                 self.createAlert(title: "Already liked", message: "The note is in yout favorite list already")
             }
     }
-        let delete = UITableViewRowAction(style: .normal, title: "delete") { (UITableViewRowAction, IndexPath) in
+        let delete = UITableViewRowAction(style: .normal, title: "Delete") { (UITableViewRowAction, IndexPath) in
             print("Note was deleted: \(list[indexPath.row].name ?? "couldn't get note")")
             self.controller.deleteAt(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)

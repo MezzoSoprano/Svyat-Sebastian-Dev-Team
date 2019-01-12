@@ -97,6 +97,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell { //C
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellID, for: indexPath) as! customCollectionCell
+        myCell.favoriteLink = self
         myCell.starButton.tintColor = .red
         myCell.nameLabel.text = favoriteList[indexPath.row].name
         myCell.textLabel.text = favoriteList[indexPath.row].text
@@ -137,6 +138,16 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let applyThemeCell = cell as! tableCell
         applyThemeCell.applyTheme()
+    }
+    
+    func removeFromFavorite(cell: UICollectionViewCell) {
+        guard let indexPathTapped = collectionView.indexPath(for: cell) else { return }
+        
+        let index = list.firstIndex(where: {$0 === favoriteList[indexPathTapped.row]})!
+        list[index].favorite = false
+        favoriteList.remove(at: indexPathTapped.row)
+        collectionView.deleteItems(at: [indexPathTapped])
+         print("Note was unliked: \(list[index].name ?? "couldn't get note name ")")
     }
 }
 
