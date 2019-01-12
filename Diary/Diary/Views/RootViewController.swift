@@ -21,7 +21,6 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         
         SignInUotlet.layer.cornerRadius = 5
-        //SignUpOutlet.layer.cornerRadius = 3
     }
     
     @objc func successAction() {
@@ -48,7 +47,7 @@ class RootViewController: UIViewController {
             successfulBtn?.addTarget(self, action: #selector(self.successAction), for: UIControl.Event.touchUpInside)
             
         }
-            //, completion: {(finished:Bool) in
+        
     }
     
 

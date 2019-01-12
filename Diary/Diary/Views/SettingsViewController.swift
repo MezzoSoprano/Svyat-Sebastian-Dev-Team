@@ -32,6 +32,7 @@ class SettingsViewController: UIViewController {
     fileprivate func applyTheme() {
         view.backgroundColor = Settings.currentTheme.background
         self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
+        self.tabBarController?.tabBar.barTintColor = Settings.currentTheme.background
     }
     
     @IBAction func viewChanger(_ sender: UISwitch) {

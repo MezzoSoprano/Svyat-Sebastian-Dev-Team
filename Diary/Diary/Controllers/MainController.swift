@@ -13,7 +13,7 @@ let coreData = CoreDataStack()
 
 var selectedItemIndex: Int?
 
-class MainViewController {
+class MainController {
     func deleteAt(at: Int) {
         coreData.delete(at: at)
         list.remove(at: at)

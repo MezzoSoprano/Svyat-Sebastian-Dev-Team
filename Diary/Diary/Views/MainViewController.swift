@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var tableView = UITableView()
     var tableViewConstraints: [NSLayoutConstraint] = []
@@ -18,13 +18,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let collectionCellID = "CCellID"
     let segueIdentifierPassingData = "segueForPassingData"
     let segueIdentifierCreatingNote = "segurForCreatingNote"
-    let segueIdentifierSettings = "settingsSegue"
-    let controller = MainViewController()
+    let segueIdentifierLogOut = "segueLogOut"
+    let controller = MainController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         coreData.load()
-        self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
     }
     
     private func setupTableView() {
@@ -92,8 +91,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tableView.backgroundColor = Settings.currentTheme.background
         }
         self.view.backgroundColor = Settings.currentTheme.background
+        self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
+        self.tabBarController?.tabBar.barTintColor = Settings.currentTheme.background
     }
-    ////////////////////////////////
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count
@@ -115,7 +116,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         selectedItemIndex = indexPath.row
         self.performSegue(withIdentifier: segueIdentifierPassingData, sender: nil) //C maybe
     }
-    /////////////////////////////////
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifierPassingData {
                 let detailVC = segue.destination as! EditingNoteViewController
@@ -164,13 +165,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func createNewNote(_ sender: Any) {
         performSegue(withIdentifier: segueIdentifierCreatingNote, sender: nil) //C
     }
-    
-    @IBAction func openSettings(_ sender: Any) {
-        performSegue(withIdentifier: segueIdentifierSettings, sender: nil) //C
+    @IBAction func logOut(_ sender: Any) {
+        performSegue(withIdentifier: segueIdentifierLogOut, sender: nil)
     }
 }
 
-extension ViewController : UICollectionViewDelegateFlowLayout {
+extension MainViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (view.frame.width - 30) / 2, height: 350)
     }

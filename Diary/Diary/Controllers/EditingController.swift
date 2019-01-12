@@ -9,17 +9,6 @@
 import UIKit
 
 class EditingController {
-//    var recivedItemIndex: Int?
-    
-//    init(index: Int?) {
-//        if index != nil {
-//            recivedItemIndex = index
-//        }
-//        else {
-//            print("Couldnt get index")
-//            return
-//        }
-//    }
     
     func deleteFromList() {
         list.remove(at: selectedItemIndex!)
