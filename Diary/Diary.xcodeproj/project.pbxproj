@@ -25,6 +25,7 @@
 		76CB699E21A33D8A00D5208E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CB699D21A33D8A00D5208E /* Assets.xcassets */; };
 		76CB69A121A33D8A00D5208E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CB699F21A33D8A00D5208E /* LaunchScreen.storyboard */; };
 		76CB69AD21A35C2E00D5208E /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CB69AC21A35C2E00D5208E /* CreationViewController.swift */; };
+		76D4877621EA4A6400E07DD6 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D4877521EA4A6400E07DD6 /* FavoriteViewController.swift */; };
 		8C95A4AB86233F62B1C16684 /* Pods_Diary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B261C4718A596040287E54B2 /* Pods_Diary.framework */; };
 		9E3853D821B4427000269923 /* CollectionViewCell-Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3853D721B4427000269923 /* CollectionViewCell-Layout.swift */; };
 		9E4DF6C121D11DCD00E28B7C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4DF6C021D11DCD00E28B7C /* PageViewController.swift */; };
@@ -62,6 +63,7 @@
 		76CB69A021A33D8A00D5208E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76CB69A221A33D8A00D5208E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76CB69AC21A35C2E00D5208E /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
+		76D4877521EA4A6400E07DD6 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriteViewController.swift; path = Diary/Views/FavoriteViewController.swift; sourceTree = SOURCE_ROOT; };
 		853D215392FB53DD841FF026 /* Pods-Diary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diary/Pods-Diary.release.xcconfig"; sourceTree = "<group>"; };
 		9E3853D721B4427000269923 /* CollectionViewCell-Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell-Layout.swift"; sourceTree = "<group>"; };
 		9E4DF6C021D11DCD00E28B7C /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				7601A0AB21A4B60000DBF9F0 /* EditingNoteViewController.swift */,
 				76CB69AC21A35C2E00D5208E /* CreationViewController.swift */,
 				7605F91B21B2E62800709DB4 /* SettingsViewController.swift */,
+				76D4877521EA4A6400E07DD6 /* FavoriteViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				769ED0D621CA4A68004ACC75 /* CodableNote.swift in Sources */,
 				76AC7BDE21C93D54008193C4 /* NetworkingService.swift in Sources */,
 				76CB699421A33D8A00D5208E /* AppDelegate.swift in Sources */,
+				76D4877621EA4A6400E07DD6 /* FavoriteViewController.swift in Sources */,
 				9E4DF6C321D2083300E28B7C /* User.swift in Sources */,
 				76CB69AD21A35C2E00D5208E /* CreationViewController.swift in Sources */,
 				7605F92E21B32B7300709DB4 /* LightTheme.swift in Sources */,

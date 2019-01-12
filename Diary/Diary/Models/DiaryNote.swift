@@ -50,6 +50,8 @@ class DiaryNote: NSObject, NSCoding {
         }
     }
     
+    var favorite: Bool = false
+    
     override init ()
     {
         name = ""

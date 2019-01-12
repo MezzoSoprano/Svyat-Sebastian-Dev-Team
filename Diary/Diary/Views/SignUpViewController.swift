@@ -65,11 +65,11 @@ class SignUpViewController: UIViewController {
                 performSegue(withIdentifier: "segueToTutorial", sender: nil)
             }
             else {
-                createAlert(title: "ERROR", message: "Already exists")
+                self.createAlert(title: "ERROR", message: "Already exists")
             }
         }
         else {
-            createAlert(title: "ERROR", message: "Please enter all fields")
+            self.createAlert(title: "ERROR", message: "Please enter all fields")
         }
     }
     
@@ -81,13 +81,6 @@ class SignUpViewController: UIViewController {
         })
     }
     
-    func createAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
 }
 
 extension SignUpViewController:  UIPickerViewDelegate, UIPickerViewDataSource {

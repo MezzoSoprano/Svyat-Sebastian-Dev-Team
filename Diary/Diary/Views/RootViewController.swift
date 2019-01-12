@@ -56,22 +56,14 @@ class RootViewController: UIViewController {
             animation()
         }
         else if (logintTF.text == "" || passwordTF.text == "") {
-            createAlert(title: "ERROR", message: "Please enter password and login")
+            self.createAlert(title: "ERROR", message: "Please enter password and login")
         }
         else {
-            createAlert(title: "ERROR", message: "Password or/and login are incorrect")
+            self.createAlert(title: "ERROR", message: "Password or/and login are incorrect")
         }
     }
     
     @IBAction func SignUp(_ sender: Any) {
         performSegue(withIdentifier: "segueToSignUp", sender: nil)
-    }
-    
-    func createAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
     }
 }

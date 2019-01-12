@@ -668,10 +668,10 @@ Access settings where you can alternate between Table and Collection views or ch
             </objects>
             <point key="canvasLocation" x="348" y="177"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite View Controller-->
         <scene sceneID="NC5-Na-ERB">
             <objects>
-                <viewController id="esd-yG-pea" sceneMemberID="viewController">
+                <viewController id="esd-yG-pea" customClass="FavoriteViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Vj-GZ-dQa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

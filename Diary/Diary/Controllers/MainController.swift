@@ -9,6 +9,7 @@
 import UIKit
 
 var list: [DiaryNote] = []
+var favoriteList: [DiaryNote] = []
 let coreData = CoreDataStack()
 
 var selectedItemIndex: Int?

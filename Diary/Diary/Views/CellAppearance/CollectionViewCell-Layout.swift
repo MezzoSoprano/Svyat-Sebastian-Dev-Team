@@ -9,11 +9,13 @@
 import UIKit
 
 class customCollectionCell: UICollectionViewCell {
+    
+     var link: MainViewController?
+    
     let cellView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.backgroundColor = Settings.currentTheme.accent
-        //view.setCellShadow()
+        
         return view
     }()
     
@@ -23,7 +25,6 @@ class customCollectionCell: UICollectionViewCell {
         iv.contentMode = .scaleAspectFill
         iv.backgroundColor = UIColor.lightText
         iv.clipsToBounds = true
-        //iv.backgroundColor = Settings.currentTheme.tint
         iv.layer.cornerRadius = 5
         return iv
     }()
@@ -31,8 +32,6 @@ class customCollectionCell: UICollectionViewCell {
     var nameLabel: UILabel = {
         let la = UILabel()
         la.translatesAutoresizingMaskIntoConstraints = false
-        //la.adjustsFontSizeToFitWidth = true
-        //la.textColor = Settings.currentTheme.tint
         return la
     }()
     
@@ -50,10 +49,24 @@ class customCollectionCell: UICollectionViewCell {
         return la
     }()
     
+    var starButton: UIButton = {
+        let image = UIImage(named: "fav_star")
+        let starB = UIButton(type: .system)
+        starB.setImage(image, for: .normal)
+        starB.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        starB.tintColor = .lightGray
+        return starB
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         applyTheme()
         setup()
+    }
+    
+    @objc func like(sender: customCollectionCell)
+    {
+        link?.addToFavorite(cell: self)
     }
     
     func setup() {
@@ -62,6 +75,9 @@ class customCollectionCell: UICollectionViewCell {
         cellView.addSubview(self.nameLabel)
         cellView.addSubview(self.dividerLine)
         cellView.addSubview(self.textLabel)
+        
+        self.starButton.addTarget(self, action: #selector (like(sender: )), for: .touchUpInside)
+        cellView.addSubview(self.starButton)
         
         //cellview constraints
         cellView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
