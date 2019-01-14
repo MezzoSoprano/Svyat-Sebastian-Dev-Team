@@ -114,13 +114,17 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let addTofavorite = UITableViewRowAction(style: .normal, title: "Unlike") { (UITableViewRowAction, IndexPath) in
+        let removeFromfavorite = UITableViewRowAction(style: .normal, title: "Unlike") { (UITableViewRowAction, IndexPath) in
             print("Note was unliked: \(favoriteList[indexPath.row].name ?? "couldn't get note name ")")
-            list[indexPath.row].favorite = false
+            list[indexPath.row].favorite = false //dodelat'
             favoriteList.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            let example = list[indexPath.row]
+            coreData.edit(name: example.name!, text: example.text!, image: example.image, favorite: false, at: indexPath.row)
         }
-        return [addTofavorite]
+        removeFromfavorite.backgroundColor = .red
+        return [removeFromfavorite]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell { //C
@@ -143,11 +147,18 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     func removeFromFavorite(cell: UICollectionViewCell) {
         guard let indexPathTapped = collectionView.indexPath(for: cell) else { return }
         
-        let index = list.firstIndex(where: {$0 === favoriteList[indexPathTapped.row]})!
-        list[index].favorite = false
-        favoriteList.remove(at: indexPathTapped.row)
-        collectionView.deleteItems(at: [indexPathTapped])
-         print("Note was unliked: \(list[index].name ?? "couldn't get note name ")")
+        if let index = list.firstIndex(where: {$0 === favoriteList[indexPathTapped.row]}) {
+            list[index].favorite = false
+            favoriteList.remove(at: indexPathTapped.row)
+            collectionView.deleteItems(at: [indexPathTapped])
+            
+            let example = list[index]
+            coreData.edit(name: example.name!, text: example.text!, image: example.image, favorite: false, at: index)
+            print("Note was unliked: \(list[index].name ?? "couldn't get note name ")")
+        }
+        else {
+            print("Problems while unliking!")
+        }
     }
 }
 

@@ -17,6 +17,10 @@ var selectedItemIndex: Int?
 class MainController {
     func deleteAt(at: Int) {
         coreData.delete(at: at)
+        
+        if let index = favoriteList.firstIndex(where: {$0 === list[at]}) {
+            favoriteList.remove(at: index)
+        }
         list.remove(at: at)
     }
 }

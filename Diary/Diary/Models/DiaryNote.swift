@@ -59,12 +59,13 @@ class DiaryNote: NSObject, NSCoding {
         tags = [""]
     }
     
-    init (name: String? = nil, text: String? = nil, tags: [String]? = nil, image: UIImage? = nil)
+    init (name: String? = nil, text: String? = nil, tags: [String]? = nil, image: UIImage? = nil, favorite: Bool = false)
     {
         self.name = name
         self.text = text
         self.tags = tags
         self.image = image
+        self.favorite = favorite
     }
     
     required init? (coder aDecoder: NSCoder) {

@@ -93,7 +93,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         self.view.backgroundColor = Settings.currentTheme.background
         self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
-        self.tabBarController?.tabBar.barTintColor = Settings.currentTheme.background
     }
 
     
@@ -157,6 +156,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             if (list[indexPath.row].favorite == false) {
             list[indexPath.row].favorite = true
             favoriteList.append(list[indexPath.row])
+                
+            let example = list[indexPath.row]
+            coreData.edit(name: example.name!, text: example.text!, image: example.image, favorite: true, at: indexPath.row)
             print("Note was liked: \(list[indexPath.row].name ?? "couldn't get note name ")")
         }
             else {
@@ -189,6 +191,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             mcell.starButton.tintColor = .red
             list[indexPathTapped.row].favorite = true
             favoriteList.append(list[indexPathTapped.row])
+            
+            let example = list[indexPathTapped.row]
+            coreData.edit(name: example.name!, text: example.text!, image: example.image, favorite: true, at: indexPathTapped.row)
             print("Note was liked: \(list[indexPathTapped.row].name ?? "couldn't get note name ")")
         }
         else {
@@ -196,6 +201,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             print("Note was unliked: \(list[indexPathTapped.row].name ?? "couldn't get note name ")")
             list[indexPathTapped.row].favorite = false
             favoriteList.removeAll(where: { $0 === list[indexPathTapped.row]})
+            
+            let example = list[indexPathTapped.row]
+            coreData.edit(name: example.name!, text: example.text!, image: example.image, favorite: false, at: indexPathTapped.row)
         }
     }
     

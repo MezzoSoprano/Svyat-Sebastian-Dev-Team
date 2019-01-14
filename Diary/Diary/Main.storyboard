@@ -458,7 +458,7 @@ Access settings where you can alternate between Table and Collection views or ch
                                         <rect key="frame" x="0.0" y="59.000000000000028" width="200" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -728,7 +728,7 @@ Access settings where you can alternate between Table and Collection views or ch
         <image name="Tutorial2" width="559" height="981"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FoF-S0-Kr4"/>
+        <segue reference="GLS-dn-CGb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>

@@ -49,17 +49,18 @@ final class CoreDataStack {
             
             if (results.count > 0) {
                 for result in results as! [NSManagedObject] {
-                    if let name = result.value(forKey: "name") as? String, let text = result.value(forKey: "text") as? String {
+                    if let name = result.value(forKey: "name") as? String, let text = result.value(forKey: "text") as? String, let favorite = result.value(forKey: "favorite") as? Bool {
                         if(result.value(forKey: "image") != nil) {
                             let image: UIImage = (UIImage(data: result.value(forKey: "image") as! Data))!
-                            list.append(DiaryNote(name: name, text: text, image: image))
+                            list.append(DiaryNote(name: name, text: text, image: image, favorite: favorite))
                         }
                         else {
-                            list.append(DiaryNote(name: name, text: text))
+                            list.append(DiaryNote(name: name, text: text, favorite: favorite))
                         }
                     } 
                 }
             }
+            favoriteList = list.filter() { $0.favorite == true }
             
         } catch {
             let nserror = error as NSError
@@ -73,6 +74,7 @@ final class CoreDataStack {
         
         newNote.setValue(name, forKey: "name")
         newNote.setValue(text, forKey: "text")
+        newNote.setValue(false, forKey: "favorite")
         if image != nil {
             let data: NSData = image!.jpegData(compressionQuality: 1)! as NSData
             newNote.setValue(data, forKey: "image")
@@ -122,7 +124,7 @@ final class CoreDataStack {
         }
     }
     
-    func edit (name: String, text: String, image: UIImage?) {
+    func edit (name: String, text: String, image: UIImage?, favorite: Bool = false, at index: Int?) {
         let context = coreData.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
         
@@ -130,10 +132,11 @@ final class CoreDataStack {
         
         do {
             let results =  try context.fetch(request)
-            if (results.count > 0 && selectedItemIndex != nil) {
-                let result = results[selectedItemIndex!] as! NSManagedObject
+            if (results.count > 0 && index != nil) {
+                let result = results[index!] as! NSManagedObject
                 result.setValue(name, forKey: "name")
                 result.setValue(text, forKey: "text")
+                result.setValue(favorite, forKey: "favorite")
                 if image != nil {
                     let data: NSData = image!.jpegData(compressionQuality: 1)! as NSData
                     result.setValue(data, forKey: "image")
