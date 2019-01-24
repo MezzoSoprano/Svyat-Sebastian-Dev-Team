@@ -37,8 +37,9 @@ class CreationViewController: UIViewController, UIImagePickerControllerDelegate,
         importImageOutlet.setCellShadow()
         importImageOutlet.showsTouchWhenHighlighted = true
         importImageOutlet.backgroundColor = Settings.currentTheme.background
+        
+        self.hideKeyboardWhenTappedAround() 
     }
-    
     @IBAction func addButton(_ sender: Any) {
         if inputName.text != "" && inputText.text != "" {
             controller.addToList(note: DiaryNote(name: inputName.text, text: inputText.text, image: inputImage.image))

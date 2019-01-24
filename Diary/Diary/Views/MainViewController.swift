@@ -24,7 +24,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         coreData.load()
-        self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
     }
     
     private func setupTableView() {
@@ -93,6 +92,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         self.view.backgroundColor = Settings.currentTheme.background
         self.navigationController?.navigationBar.barTintColor = Settings.currentTheme.background
+        self.tabBarController?.tabBar.barTintColor = Settings.currentTheme.background
     }
 
     

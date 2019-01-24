@@ -571,7 +571,7 @@ Access settings where you can alternate between Table and Collection views or ch
                                         <rect key="frame" x="0.0" y="252" width="201" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBl-3C-tQt">
                                         <rect key="frame" x="0.0" y="315" width="201" height="30"/>
@@ -728,7 +728,7 @@ Access settings where you can alternate between Table and Collection views or ch
         <image name="Tutorial2" width="559" height="981"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GLS-dn-CGb"/>
+        <segue reference="FoF-S0-Kr4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>

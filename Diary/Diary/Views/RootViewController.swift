@@ -21,6 +21,8 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         
         SignInUotlet.layer.cornerRadius = 5
+        
+        self.hideKeyboardWhenTappedAround() 
     }
     
     @objc func successAction() {
@@ -41,8 +43,6 @@ class RootViewController: UIViewController {
 
         }) { (isFinished) in
             let successfulBtn = self.SignInUotlet
-            //self.SignInUotlet.removeFromSuperview()
-            //successfulBtn?.transform = CGAffineTransform.identity
             successfulBtn?.setTitle("Success!", for: UIControl.State.normal)
             successfulBtn?.addTarget(self, action: #selector(self.successAction), for: UIControl.Event.touchUpInside)
             

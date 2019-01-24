@@ -47,8 +47,9 @@ class EditingNoteViewController: UIViewController, UIGestureRecognizerDelegate, 
         editingPicture.setCellShadow()
         editingPicture.backgroundColor = Settings.currentTheme.background
         
+        self.hideKeyboardWhenTappedAround() 
     }
-    
+
     @IBAction func deleteAction(_ sender: Any) {
         controller.deleteFromList()
         _ = navigationController?.popViewController(animated: true) //

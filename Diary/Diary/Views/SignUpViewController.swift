@@ -30,6 +30,7 @@ class SignUpViewController: UIViewController {
         setupGenderPicker()
         setUpToolbar()
         
+        self.hideKeyboardWhenTappedAround() 
     }
     
     func setupGenderPicker() {
