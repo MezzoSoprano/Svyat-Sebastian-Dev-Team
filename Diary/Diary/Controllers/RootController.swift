@@ -10,15 +10,17 @@ import UIKit
 import Locksmith
 
 class RootController {
-    func logIn(username: String, password: String) -> Bool {
+    func logIn(username: String, password: String,  comletion: (String?, String?,Error?) -> Void) -> Bool {
         let dictionary = Locksmith.loadDataForUserAccount(userAccount: username)
         if (username == dictionary?["login"] as? String  && password == (dictionary?["password"] as! String)) {
-            print("false1")
+            comletion(username, password, nil)
             return true
         }
         else {
-            print("false")
+            comletion(username, password, nil)
             return false
         }
     }
+    
+
 }

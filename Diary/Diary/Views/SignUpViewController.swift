@@ -60,20 +60,23 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func SignUp(_ sender: Any) {
+        
         if (nameTFOutlet.text != "" && lastNameOutlet.text != "" && ageTFOutlet.text != "" && emailTFOutlet.text != "" && passwordTFOutlet.text != "" && genderPickerOutlet.text != "") {
-            if (controller.signUp(name: nameTFOutlet.text!, lastName: lastNameOutlet.text!, age: Int(ageTFOutlet.text!)!, email: emailTFOutlet.text!, password: passwordTFOutlet.text!, gender: genderPickerOutlet.text!)) {
-                
-                performSegue(withIdentifier: "segueToTutorial", sender: nil)
-            }
-            else {
-                self.createAlert(title: "ERROR", message: "Already exists")
-            }
-        }
-        else {
-            self.createAlert(title: "ERROR", message: "Please enter all fields")
+        
+           if (controller.signUp(name: nameTFOutlet.text!, lastName: lastNameOutlet.text!, age: Int(ageTFOutlet.text!)!, email: emailTFOutlet.text!, password: passwordTFOutlet.text!, gender: genderPickerOutlet.text!, completion: { (name, pass, error) in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                    print("networking stuff has ended..")
+                })
+           })) {
+            performSegue(withIdentifier: "segueToTutorial", sender: nil) } else {
+                            self.createAlert(title: "ERROR", message: "Already exists")
+            } 
+
+        } else {
+                        self.createAlert(title: "ERROR", message: "Please enter all fields")
         }
     }
-    
+
     
     @IBAction func Back(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

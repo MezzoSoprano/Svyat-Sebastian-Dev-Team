@@ -52,8 +52,13 @@ class RootViewController: UIViewController {
     
 
     @IBAction func SignIn(_ sender: Any) {
-        if (controller.logIn(username: logintTF.text!, password: passwordTF.text!)) {
-            animation()
+        if controller.logIn(username: logintTF.text!, password: passwordTF.text!, comletion: { (name, pass, err) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0, execute: {
+                print("networking stuff has ended..")
+            })
+            
+        }) {
+            self.animation()
         }
         else if (logintTF.text == "" || passwordTF.text == "") {
             self.createAlert(title: "ERROR", message: "Please enter password and login")
